@@ -3,7 +3,7 @@ import io
 import os
 from PIL import Image
 
-BASE_DIR = "/usr/local/google/home/imasa/.gemini/jetski/brain/eb1ea50e-a996-4a13-abf2-7e4b2f84571f/scratch/agi-economics-lab"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 IMG_DIR = os.path.join(BASE_DIR, "static/images")
 
 def get_data_uri(filename):
