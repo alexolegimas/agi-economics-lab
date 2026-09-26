@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="en" data-design="index">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGI Economics Lab @GoogleDeepMind</title>
+  <meta name="description" content="AGI Economics Lab @GoogleDeepMind, directed by Alex Imas. We study the economics of Artificial General Intelligence—spanning autonomous agent markets, organizational scaling, labor transitions, scientific discovery, and economic policy." />
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap');
+
+/* ============================================================================
+   GOOGLE DEEPMIND — AGI DAWN ECONOMICS LAB
+   SUPER-MINIMALIST EDITION (4 Quiet Architectural Variations)
+   ============================================================================ */
+
+:root,
+[data-design="monograph"] {
+  --bg: #FAF8F5;
+  --bg-hover: rgba(17, 17, 17, 0.025);
+  --text: #141413;
+  --text-secondary: #575653;
+  --text-muted: #8C8A84;
+  --accent: #141413;
+  --rule: rgba(20, 20, 19, 0.1);
+  --rule-strong: rgba(20, 20, 19, 0.22);
+  --font-heading: 'Newsreader', Georgia, serif;
+  --font-body: 'Newsreader', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --container-width: 760px;
+  --body-size: 1.08rem;
+  --portrait-filter: grayscale(15%);
+  --portrait-radius: 50%;
+}
+
+/* VARIATION II: SWISS TYPOGRAPHIC INDEX (Pure White, Sans-Serif Tabular) */
+[data-design="index"] {
+  --bg: #FFFFFF;
+  --bg-hover: #F7F7F8;
+  --text: #09090B;
+  --text-secondary: #52525B;
+  --text-muted: #A1A1AA;
+  --accent: #09090B;
+  --rule: #E4E4E7;
+  --rule-strong: #18181B;
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --container-width: 920px;
+  --body-size: 0.95rem;
+  --portrait-filter: grayscale(100%) contrast(1.05);
+  --portrait-radius: 4px;
+}
+
+/* VARIATION III: SPLIT-SPINE ARCHITECTURAL DIRECTORY (Sticky Left Rail) */
+[data-design="split"] {
+  --bg: #F6F5F2;
+  --bg-hover: rgba(0, 0, 0, 0.03);
+  --text: #111110;
+  --text-secondary: #555450;
+  --text-muted: #8E8D87;
+  --accent: #111110;
+  --rule: rgba(17, 17, 16, 0.09);
+  --rule-strong: rgba(17, 17, 16, 0.85);
+  --font-heading: 'Instrument Serif', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --container-width: 1080px;
+  --body-size: 0.95rem;
+  --portrait-filter: grayscale(25%);
+  --portrait-radius: 6px;
+}
+
+/* VARIATION IV: OBSIDIAN QUIET (Minimal Matte Charcoal) */
+[data-design="obsidian"] {
+  --bg: #0E0F11;
+  --bg-hover: rgba(255, 255, 255, 0.03);
+  --text: #ECECEE;
+  --text-secondary: #94969C;
+  --text-muted: #5E6068;
+  --accent: #ECECEE;
+  --rule: rgba(255, 255, 255, 0.08);
+  --rule-strong: rgba(255, 255, 255, 0.22);
+  --font-heading: 'Newsreader', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --container-width: 780px;
+  --body-size: 0.96rem;
+  --portrait-filter: grayscale(20%) brightness(0.95);
+  --portrait-radius: 50%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--body-size);
+  line-height: 1.65;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  padding-bottom: 6rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================================================
+   WHISPER-QUIET MINIMAL THEME SWITCHER (Top Right Pill)
+   ============================================================================ */
+.minimal-switcher {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.5rem;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  background: var(--bg);
+  border: 1px solid var(--rule-strong);
+  padding: 0.25rem;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.switch-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.switch-btn:hover {
+  color: var(--text);
+}
+
+.switch-btn.active {
+  background: var(--text);
+  color: var(--bg);
+  font-weight: 500;
+}
+
+/* ============================================================================
+   LAYOUT CONTAINER & SPLIT-SPINE ARCHITECTURE
+   ============================================================================ */
+.page-shell {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 5.5rem 2rem 2rem;
+}
+
+[data-design="split"] .page-shell {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 4.5rem;
+  align-items: start;
+  padding-top: 4.5rem;
+}
+
+/* ============================================================================
+   HEADER / INTRO
+   ============================================================================ */
+.site-intro {
+  margin-bottom: 4.5rem;
+}
+
+.lab-title,
+.person-name,
+.writing-title {
+  font-optical-sizing: auto;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+.minimal-switcher {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+[data-design="split"] .site-intro {
+  position: sticky;
+  top: 4.5rem;
+  margin-bottom: 0;
+  padding-right: 2.25rem;
+  border-right: 1px solid var(--rule);
+}
+
+.institution-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.lab-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  margin-bottom: 1.25rem;
+}
+
+[data-design="index"] .lab-title {
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+}
+
+[data-design="split"] .lab-title {
+  font-size: 2.35rem;
+}
+
+.lab-lede {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.68;
+  max-width: 62ch;
+  font-weight: 400;
+}
+
+[data-design="index"] .lab-lede,
+[data-design="split"] .lab-lede {
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.minimal-nav {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+[data-design="split"] .minimal-nav {
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.minimal-nav a {
+  transition: color 0.15s ease;
+}
+
+.minimal-nav a:hover {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.nav-num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-right: 0.35rem;
+}
+
+/* ============================================================================
+   SECTIONS
+   ============================================================================ */
+.minimal-section {
+  margin-bottom: 5rem;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--rule-strong);
+  margin-bottom: 1.5rem;
+}
+
+.section-label {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text);
+}
+
+.section-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* ============================================================================
+   1. PEOPLE (Clean Minimalist 2x2 Roster)
+   ============================================================================ */
+.people-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 2.5rem;
+}
+
+.person-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: opacity 0.2s ease;
+}
+
+.person-row.dimmed {
+  opacity: 0.4;
+}
+
+.person-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--portrait-radius);
+  object-fit: cover;
+  filter: var(--portrait-filter);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  transition: filter 0.2s ease;
+}
+
+.person-row:hover .person-avatar {
+  filter: grayscale(0%);
+}
+
+.person-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.person-name-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.person-name {
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+}
+
+[data-design="index"] .person-name {
+  font-size: 0.96rem;
+  font-weight: 600;
+}
+
+.person-name:hover,
+.person-row.active-author .person-name {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.person-links {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  display: flex;
+  gap: 0.65rem;
+}
+
+.person-links a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.person-role {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-top: 0.1rem;
+  line-height: 1.45;
+}
+
+.collaborators-line {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.collaborators-line strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ============================================================================
+   AUTHOR FILTER INDICATOR (Minimal inline bar when clicked)
+   ============================================================================ */
+.filter-indicator {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.85rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--rule-strong);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.filter-indicator.visible {
+  display: flex;
+}
+
+.filter-clear-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ============================================================================
+   2, 3, 4. PAPERS & WRITINGS TABLE (Strict 3-Column Alignment: Title | Authors | Topic)
+   ============================================================================ */
+.topic-filter-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 2.5rem;
+}
+
+.topic-filter-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-right: 0.35rem;
+}
+
+.topic-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--rule-strong);
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.topic-tag:hover {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+.topic-tag.active-topic {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+.writing-table-head {
+  display: grid;
+  gap: 1.25rem;
+  padding: 0 0.5rem 0.5rem;
+  margin: 0 -0.5rem;
+  border-bottom: 1px solid var(--rule-strong);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.papers-grid {
+  grid-template-columns: minmax(0, 48%) minmax(0, 33%) minmax(0, 19%);
+}
+
+.essays-grid {
+  grid-template-columns: minmax(0, 43%) minmax(0, 23%) minmax(0, 15%) minmax(0, 19%);
+}
+
+.writing-table-head > div:last-child {
+  text-align: right;
+}
+
+.writing-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.writing-row {
+  padding: 0.95rem 0.5rem;
+  margin: 0 -0.5rem;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 3px;
+  transition: background-color 0.15s ease;
+}
+
+.writing-row:hover {
+  background-color: var(--bg-hover);
+}
+
+.writing-main {
+  display: grid;
+  gap: 1.25rem;
+  align-items: baseline;
+  cursor: pointer;
+}
+
+.writing-title {
+  font-family: var(--font-heading);
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+[data-design="monograph"] .writing-title,
+[data-design="obsidian"] .writing-title {
+  font-size: 1.06rem;
+  font-weight: 400;
+}
+
+[data-design="split"] .writing-title {
+  font-size: 1.16rem;
+  line-height: 1.3;
+}
+
+.writing-row:hover .writing-title {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.writing-authors,
+.writing-outlet {
+  font-family: var(--font-sans);
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.writing-outlet {
+  color: var(--text-muted);
+}
+
+.writing-topic-cell {
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Quiet Literary Margin-Rule Drawer for Abstract & Direct Link */
+.writing-drawer {
+  display: none;
+  margin: 0.85rem 0 0.25rem 0.15rem;
+  padding: 0.1rem 0 0.15rem 1rem;
+  border-left: 1.5px solid var(--rule-strong);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  max-width: 68ch;
+  line-height: 1.65;
+}
+
+.writing-row.expanded .writing-drawer {
+  display: block;
+}
+
+.drawer-links {
+  margin-top: 0.65rem;
+  display: flex;
+  gap: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+}
+
+.drawer-links a,
+.drawer-links button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+/* ============================================================================
+   MICRO-EDIT MODE (Inline ContentEditable & Short Reference Codes)
+   ============================================================================ */
+.ref-code {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: #B45309;
+  background: #FEF3C7;
+  padding: 0.08rem 0.35rem;
+  border-radius: 3px;
+  margin-right: 0.45rem;
+  vertical-align: baseline;
+  user-select: all;
+}
+
+body.edit-mode .ref-code {
+  display: inline-block;
+}
+
+body.edit-mode [data-editable="true"] {
+  outline: 1px dashed rgba(180, 83, 9, 0.45);
+  outline-offset: 2px;
+  border-radius: 2px;
+  cursor: text;
+}
+
+body.edit-mode [data-editable="true"]:focus {
+  outline: 1.5px solid #B45309;
+  background: rgba(254, 243, 199, 0.25);
+}
+
+.edit-mode-banner {
+  display: none;
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  background: #18181B;
+  color: #FAFAFA;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+body.edit-mode .edit-mode-banner {
+  display: inline-flex;
+}
+
+.edit-mode-banner button {
+  background: #FAFAFA;
+  color: #18181B;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+.minimal-footer {
+  margin-top: 5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+@media (max-width: 860px) {
+  [data-design="split"] .page-shell {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  [data-design="split"] .site-intro {
+    position: static;
+    border-right: none;
+    padding-right: 0;
+  }
+  [data-design="index"] .writing-main {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+  .writing-main {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+  .writing-meta {
+    text-align: left;
+  }
+  .people-list {
+    grid-template-columns: 1fr;
+  }
+  .minimal-switcher {
+    position: static;
+    margin: 1rem 2rem 0;
+  }
+  .page-shell {
+    padding-top: 2rem;
+  }
+}
+
+</style>
+</head>
+<body>
+
+  <div class="page-shell">
+    <!-- Left Spine / Top Header -->
+    <header class="site-intro">
+      <h1 class="lab-title" data-editable="true" data-ref="HEADER-TITLE">AGI Economics Lab @GoogleDeepMind</h1>
+      <p class="lab-lede" data-editable="true" data-ref="HEADER-LEDE">
+        We study the economics of Artificial General Intelligence—spanning autonomous agent markets, organizational scaling, labor transitions, scientific discovery, and economic policy.
+      </p>
+      <nav class="minimal-nav" aria-label="Sections">
+        <a href="#people"><span class="nav-num">01</span>People</a>
+        <a href="#papers"><span class="nav-num">02</span>Papers</a>
+        <a href="#essays"><span class="nav-num">03</span>Essays &amp; Popular Writings</a>
+      </nav>
+    </header>
+
+    <!-- Main Content Column -->
+    <main>
+      <!-- 01. PEOPLE -->
+      <section class="minimal-section" id="people">
+        <div class="section-head">
+          <h2 class="section-label">01 · Lab Members</h2>
+          <span class="section-meta">Click a name to filter (click outside to reset)</span>
+        </div>
+        <div class="people-list" id="people-list"></div>
+      </section>
+
+      <!-- Active Author/Topic Filter Indicator (Hidden unless filtered) -->
+      <div class="filter-indicator" id="filter-indicator"></div>
+
+      <!-- Lab Research Topics Bar -->
+      <div class="topic-filter-bar" id="topic-filter-bar" aria-label="Filter by Research Topic"></div>
+
+      <!-- 02. PAPERS -->
+      <section class="minimal-section" id="papers">
+        <div class="section-head">
+          <h2 class="section-label">02 · Papers</h2>
+          <span class="section-meta" id="papers-count">3 Papers</span>
+        </div>
+        <div class="writing-table-head papers-grid">
+          <div>Title</div>
+          <div>Authors</div>
+          <div>Topic</div>
+        </div>
+        <div class="writing-list" id="papers-list"></div>
+      </section>
+
+      <!-- 03. ESSAYS & POPULAR WRITINGS -->
+      <section class="minimal-section" id="essays">
+        <div class="section-head">
+          <h2 class="section-label">03 · Essays &amp; Popular Writings</h2>
+          <span class="section-meta" id="essays-count">15 Writings</span>
+        </div>
+        <div class="writing-table-head essays-grid">
+          <div>Title</div>
+          <div>Authors</div>
+          <div>Outlet</div>
+          <div>Topic</div>
+        </div>
+        <div class="writing-list" id="essays-list"></div>
+      </section>
+
+      <footer class="minimal-footer">
+        <span>AGI Economics Lab @GoogleDeepMind</span>
+        <span>New York &amp; London · 2026</span>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Floating Helper Bar when in Micro-Edit Mode -->
+  <div class="edit-mode-banner" id="edit-mode-banner">
+    <span><strong>✎ Micro-Edit Mode Active:</strong> Click any text on the page to edit inline, or reference items by their yellow ID tag (e.g. <code>[W1]</code>, <code>[E1]</code>) in chat.</span>
+    <button type="button" id="copy-edits-btn">Copy My Inline Edits</button>
+  </div>
+
+  <script>
+/**
+ * AGI Economics Lab @GoogleDeepMind
+ * Verified Lab Members, Papers (SSRN / arXiv / PDF), and Essays & Popular Writings
+ */
+
+window.LAB_DATA = {
+  meta: {
+    labName: "AGI Economics Lab @GoogleDeepMind",
+    institution: "Google DeepMind",
+    director: "Alex Imas",
+    locations: ["New York, NY", "London, UK"],
+    updated: "September 2026"
+  },
+
+  coreMembers: [
+    {
+      id: "alex-imas",
+      ldap: "imasa",
+      name: "Alex Imas",
+      role: "Director of AGI Economics",
+      secondaryRole: "Professor of Behavioral Science & Economics, University of Chicago Booth School of Business; NBER",
+      location: "New York, NY",
+      office: "Google DeepMind NYC",
+      photo: "data:image/jpeg;base64,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",
+      links: [
+        { label: "Website", url: "https://www.aleximas.com" }
+      ]
+    },
+    {
+      id: "andrew-koh",
+      ldap: "andrewkoh",
+      name: "Andrew Koh",
+      role: "Research Scientist",
+      secondaryRole: "Assistant Professor, Columbia University",
+      location: "New York, NY",
+      office: "Google DeepMind NYC",
+      photo: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCADwAPADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAAAgEDBAUGAAcI/8QAPxAAAgEDAwIEAwYEBQMDBQAAAQIDAAQRBRIhMUEGE1FhInGBBxQykaGxFSNCwVJi0eHwFiRyMzRDU2OCwvH/xAAaAQACAwEBAAAAAAAAAAAAAAABAwACBAUG/8QAKBEAAgIBBAEEAgIDAAAAAAAAAAECEQMEEiExQRMiMlEUQgUjYWKh/9oADAMBAAIRAxEAPwDYA11CDRZrmWbjs4pc0NKKsAKuzSUgqApjgrjSZrs80QHA0WaGuohCzXbqHPakBydoBLE4wKJAs0hNBuywUZJPYc0/92bYX/m7NwG/yWI5PU+lEgGyQmMLFIfM4UheGPtRm3RoSZJsZ42xgMf1PP0qp/jUkerLPAnlWGmZmmkK7vO2AnYf8zYx6ZwKDQ/FMHja88jS9KgsnVDvjZvhjTcSHZumeQMDucdqcsTrcJ3q6J8vliKQ+Y2djfCByOD36Vm/FMwGsyMLdQDHBgyAtx5a9O1bS70i4isJZSrqvlkll2rnIPPvnBxisH4kZBrE4VWZQ0aK7MW6Ko47dathXvBlftIy3Mkk8wZlxuPCqFHHyFTbNwBdtnpZS/qVH96rLNDLNOylAqsdzuwVV57n/hqxtZo4or4wt5sn3XAcrwCZE/CDz9T+Va2zKitY/wA2U/5H/tVr4U/97j/Mn6BqpzuZ58AltrDHc81deFERbw7nUtv6Lztwp70vN8BmFe41U5/lP8sVzHk0MxyhzwMgc9+aU45rBZrBzXGkPWlzQJQJpCeK4mhJoMNAk812a40mRUBQ6DzRZpFFIetJGtBZohTY60u7FWTAHS0ANcDzRTAGDS0IOBXE0SMLNLgt0UmgBUkb3CgnHWpMMNk8h3aiBgYVcYb88Y7UVyVOgSSKIXslmbi0SYQvkjZvwDtbHI4YGq/Vpb/S5PvTxo1szbXCKP8AtxgYY7eCP9ai3kU0fiB4LSO5lWeETqqA7pSuEkOAOMARnJ4x35FPw/aFbeExf6Xqdg9/MsgikgIV93wgGLAzwC4z3zx1OBphjvhCpTrlnSXeqXU5e28+O0QbZLiKPavXJww6cDtzzxTmt67N4bis5JppXdnHwIzrGgxhgxHDYOM4znt60OifatJoxu9M1drG+ZGMjNbRxlYsgZhRAdo2LkYyc5bJzXnXjr7Rv+qbwzJarHH5YhiBGNiKxxhQcA4644PFOjgtinmE8ReN5JLJbGwlkjQ5Ms3O+djzkE8gZ/b61VeF7WS7V1F28C7toRRhTgA8nIwP9KqPMhVVlnDTPy2MY3+mT6AdhR2t1Bbw7ZllaMM2Sj7Sc8Yz9K1bEo0hO7m2eyaR4mv9Qilgt0IW3f8A7iaFFMbnDBcAkls4GAMDj0qstfEaCWR77Sr3UHdxm7u9kZjXGVxweo4J544GK8w/jTx25ht/MihOxwqMQdwJw27rnk89asNO8VX1nbLF98u2hC7TGWLjHp8QwPpVPSL+p9noy/aVocgWO/0fTIUiy6lZt+4k8YAUAk9844oj9p3hxy4tNC0542/H5uEUj0wq5P0NeUXdxpl1/NayktnJPxLKDn0+E1XSSKZD8fmAcKTwMfKisSZX1KPRNU8WaPfSyJp+kaTa+aAgSCeUHqCfxDr14HHPtU7w7qa2F4hltXt1dsksuSgIwCSe3fpXmMN9Oki7JSgHRVOwH6jpU/TrqVZN6GR5Bh2XPpzznqKE8Vqi0MvJ7c0sdzEskTrIpYDcD705msj4X1NL5EKuqSBhujJbtnvjv71qonWT8WUwSGBGSK5s47XRri75FPWuzXHqaQ8VSy4hNCTS0BqtgEJoetKTQ5qEJANdmk6UtKQ04V2KUV1GytHdKUV1cvWjYAqTPPIJ9hSA9M8Anqe1G8TJIqSkRbxkFjyR6gDk0UQKBQzvmAMcHGWIAJ6dKauZ4rdraO5ubW2jJ3GQybzz1LDjAwD3/OqHxVrMWl2TwWl2DckNuBcgrj8RbGMD07kkdapdC8VwQQm9UCW7WUeYWk3lgdp/C39I24689PnrxYr5YrJOuEaXX57+ewS5tjKLiF3iW2igC5BRSd4BBAIkRxu7lcjOK8zhjuIrW+tFiJe0truW5ePmTIClQG68kNkjn3rXx6vbGCXyb+WW4nkLzX/mL5zMecOT/SGwcDOdo9gMRd6jc6RqB1CxtTZHLBHLAk565ycEEcEdMGt2OKXCMeRtlEt5cCdDMQwGGwhxtBHQY6cGhLokmAOScBSc4+dStS1i41iQPLJBAhUKYoYwgwOmMDp7Z4qqkbB2gdPSnoUSnmbazk5apkE+ItgIBDZBxnB9f3qqLHHXinI5dp9xjBqNEskXVywlY7kBYEcryKY3FzlndvempnVj34P6UAOR1NFAZJ4x+L6d6DPPw/kaaAY8Ak4/SlG4e/yOaJEOkFQCRx2qxs5FSNLvcDJHKoaNx8LKR1PI7jGPSqsknqfzFO20oif4kV1PY1VhTo3Gk61G17HePkSDHmYO0SEHAJPbGepzxXpdndQ3EfmRMHDcqynIPc/qa8V028MbAoryYBBVmwm31Oe/FepeD9Qs73SrdICDLDEqScsCpxk/CQMjPccdeTXP1MK5NmGVl8aQ0hrqwmhHZptqImgY1CNg0hNdmkNQhIzSjmhpR1pI0MUQWhFGvSiQSu6UvWuywOVJB9QagKAmd4o8JD5ssjbIoy2MufX24JJ9AaFbCC0gJe9leWZsvK7RrJM3soJ+EcYHSge3e4ud0jq7IjAbzjlsDv7cfKmryzDL8EETSBgC7N+EAdBjvk9RTYMqzI6zf6L4fN1HNbLqEmo2stsZVAHlucHdgcNhgBnIySay8+uwzWxheFlf8LjYAMkg4AGBgYpzxbMGv4rp0UZdxBGq7RsQlVwOoGQT8gKy0j/GFVnOzPA4B9TzXUxR9pinLk0EuqRrGoSJUbnAYA5z3x07VQXkwnOZGeU543YUD5AVEa5duxPuW602zjpjHyp0YpCZSsMsck5x7UAIHqaRRuPAp0Q9B3NXsoosAnIwBj2FIOBwatLbRnlwz5C9ScdanReHri5jzDGQBzvx0FLeWKGrBJmeZiF24469KQTygfC5FW1/oklsUXDNuYqM8GqiRPLkZfSrxmpdFZwcexwXDt+L4vpXZBOcD9qaBIPrR/C3HIPqatYuxwDdwuc+nekXJIHX5UznaRjP7U6uXDFcZAyQR+1RkJEFwYmUvuGeAwGfpitj4Y1hLe+SclkI5Dg5BBwCp9QTzjtWK83cp3AbwBkA8OPX51L0+crJ5DOFLY2s3Iz2NKyRUlQyEtrs98jk8wZFETz0xWT8C6//ABC1+6NubblkdzlyBxt9B6//AMrV9DXInHa6Z0Iu1YjGgJojzQE1Sw0IaSuJpM0LISBzRDpQiipI5iijzxQCiJqwBQa4d64V1EgjIGIOcDuMcGoWsTCztJGV9srjEbMuCT6L79fnU+qTxbfmw0G+meRtqp/LU8jdwB8up/Kr4+ZJFZdHkGv6mJr4sm5I4yUjGecZOSffNUTzuzMM/MGgu7nfIxA2joB6CoyyYPzrtwjSOZN2x4vk9h8hRoC55pvblcjrUm22q2584xVrAkSrW3B5bAA6kmr7QNIjuWE8hzuOEQdcep9KrdMtxdyospCRD4z/AL16toOiQR2ytEoCuF2Nt6+9ZM+XaqN+mw7uSNpPhqEkzSwgoowikcHjqe5/tWhg0SGNAxC/FyQatLOxRYcDcRUtrZR6ACue8jZ0o40jzfX9HV5ZpFiBaFWfPzbj9BXmmr2BiuFIXAeMMPyr3PVrUyTZAIWWIofc7uP3rzfxLpXlsCEGyJ8D/wAG4x9DiteDLTMWow2jBY7d6EMV6H86lXtuYZgO3r61CJYHB6V0VK0cmUaYbMxH+lBvZT1OPSuyT1FAR6CrFR4XBMZRucdD3p+GUsnJ5HIP9qiwOiyYkA2kEEkZxkdfpRxoyxh9vB/KqhRvvBJaDU1eNtwKEt6KwGVb9xXqQKsPh6V5P4BvRJeKhj8+QDe6vwpxkDHfo3516tbjy4VUDsOTyfrXK1aqRvwP2hGm24ojQOeayjhDSCurs1CEijGKAUYGaUNYvFKaTFLUAKKWkxxXUbIEKyv2g2kl3oF0kW7dsAQDoW3Ln64z+tagGm54UuNiOm5d4Yr6/wDMUzHLbJMrJWqPmOUhydpzg8H602Afyq78Q6CdC1KeJ3jaEuzQGNwwdCTt5HcDrVUi+Y6xgcscV3VJNWcyUGnTJFpbmZCc4x60RtZTJtXOMjt0PatHY6VuiQJDlumT2960Oj+HoQV81FbPxYJ/vWZ56NkdLaKPQ9E1iOVJUsBL/UjYBA99p/3r1bw9aXrwq+oLEmMZwzZb25x+Q45otJt1ijVwvJ4VR2q8ggxtd8M/U8cfSsGXM59o6WLAoLskw4wAo4H604fw5JyRSdBntQj4l6nj1pBoIOoQB4oFPQkLx69sfUVkPE+ls1s0gXIZSrYHB9/Y9/pWzvVL2zgH4kO4cdCORUCeN7qHaoAPRsn0psJULnC0eF6rCXZ1cHzIsA4HUE9aop42icgj5Zr0jxd4f8uRp7aMh42O4Ac468+tYjUrYwgbojt6hlO4Ff8An966eLJaOPnw0ypD9iDSMw9K5oz16U3nacHmtNmJqhc88VJgmljQRrJhHOWU9PnUXcKkwKnls4YFgR8JHFRsCRu/sqsJJNekuoW/k28DrJnJDFxgAfkTmvVR8IAznAxmvPfsejc2mossGR5iDfwCAF6EdT/vXoRrkaqV5DoYF7RCaBzRNTbGsww4GkNJmuzRCS6IGgzRZpI1hBqXNB3rs0SDma7NDmuzUAGDxVZr908Vj91hJE16TAG/wJxvPzOQPlmrEHioOrJ/Kt5cf+nMQD25Uf6VLa6NehjGWeKn0eR+O7QafZQx7BgSlEfuO5ArPeFrJ9Q1ZFCbgg3H+1aL7ULoTpp8CZ+F5HJPHOB+5P6Vd/ZR4eA02bVZhgTSFIh6hep/PNdWE3HBbMeqju1bS6LCSz/h9kGyBgYyeC3QVnrnVL6KTgyBc9YxmtvfxJdMFfAVT0PYVHjiso2G7ywBwcgVnhkSHywyl5M/pf2iz6RIBcW3nRnjOcFR64NbvRPHuj6soEd0scoGSknw1DfQNH1WF0lhiZG5yMfmKyer/Z2bJjLp9w3wncB6VZ+nLvgCjmx/5R67BdQzgMGU56EHNPHBGQa8k8ParfadEbeTOQ6j59a39hqrTRAsxDHtWecdprxy3otpI94PvgZqJJCY3YqODnj/AH9a7+IqTjIwOTg+1AdVt2Yq0iA55BYccUIlmvshX1kLuMB4doI2Heo6+vB9awGveGJbGJ1WASQOeNpxsPsew9j+dekvfwncBNEQe24ZqDfSwSW7qHXKjDc02MpREThGXZ4Ld6ZLG7BYpBz0YdPrVZOhichwR869H1izUy4UDJ646VjPElmLfY4/qrfizW6Zys+BRVopGfsBRREbhnp8qaBNKWCrvwcAVpZhPZvsojjOk3UkeSrumSw/rAO7B9OQPpW2J5qn8G6SNE8M6daEESCEPLnqXf42z9Wx9Ktiea4maW6bZ0oLbFI5jTbGjPSm2NLDYgNcTzQ5pCahCaTS5oKKkjRQ1LuocV2cVCUHmlzQdqUUUQMdKh6udtiWOfgdW/epimmL6PzrSVMDOM8+3+2at5HaaW3JFnkHj1OI45MeakhVF9QRwf8AnpXqGiWiaboNnYx4/kwKhHvjn9c15/4v04vLpjYLYudpz/hJx+mRXodvKNhA/wAR4rTlnWNJD5QvPJsharpxuoyRIYmHQgdKxeo+ENSvLzzWunurdCDKkKgSbfbNeimFpHB3f3qNNY3tvI00Q5P9UZ5+opOHLtLTw7uzyLXZLbQfEN6un3Go6daxhFtSkpG8bQS7ljyck8e2K1mieJNWtILEa5GcX0Akjm2bSc9mHrjB+taG/YXahb3TIpWU5DqOc+pHrUC/02XXHWO7nunGMIXO9l9McVsllhOJmxaeeOVp8CXflTTq6AAnvVjFJLDDnJyAcVJs/DyC0V5smXAB4xnA6496sZ9PaLSzjGegOKyOSujdDgyt5q8wTy4AzEnn3qhufD+t6uSu9gCc/FkfWtM9s9nuuJkAUAkseAAPftVe/iq4linewspLiK2jaSWRELBVHUk8Afn9KdBv9UZ8yjJXJlE/2eeIo/jt70M2cj4yOai3UXiDRsC/WUsvAkRtwx6H2qzh+1SW3ERaBWSQgAAhiM8DIU5/erFPFFprSbShR2BG7OQfUA+vseafumvkjGseKXwkZqz1aS4nhhlKnc2Mr8qr/GgWNY1HIzj645q+TR0/iYmixtQFvXJrOeOJP+7gh9FLn6/8NXxtOaoVmTWN2ZXPPFabwJ4Vm8TavEXWRbC3YSTSbeGwfwA9MnimfBnhYeKdYFnM80VuEZ3eLGeMcZPT517tpmnWuj6fDY2cKQwQrtVV/cnufer6jUKC2rsy4sLfuZJA2jHbJx7U2TRM3FN965ZrYpPFNk0bHimiagBM80hNJnmkNQhNzS0NcDSRo4GrjQil71AhdBXZpCeKQGiAdQ0kqs8bopwzKQPmRxSIaKjYU6dmF1HN5FbjbzHMpPqpB5B/WtBZyHYp5yeTik13TbNUbUBGVn3KCysQGJOMkdCaYsp1GOvNXm7VHRWRZJb0i/tQZCCRgnirBYQy89arLKVSFBPTtVkt2kaglqQPaFa1Ruv7UBhhhGdoJpt9ThXJLio8moQyoSA3HHIxRK0FJKrSbV705eMBZKp6DmoVs3nTBh0zTurP5UezPYVZIDId1avfwlVjikQHPlyDKtVEqW9hcSLIs1hJIpQhR8DA9fYitLpbFQoY9ql3thFdJtkRXU/0kZFXhkcSjgn2edWfgnQrC9iv7GWETxDegkLMiN6hSeo7Zqou/Cso1VrmwuklaR98i8hWb1z616DP4Zsix2vcxZ5K7+P1FcNGt7VcIGx6k5NPeqfkR+NHwigt7KaOEmYKrdWA5ya808ZzibX5xkYiVI/rjP7mvYL2RLe3fnHHWvGo7CbxR4h+7wA7rudnZj/ShPX8sfnTtJLuTMmtXCgvJ6F9lWiyWts2oyDasseFB6sTgk/IDb9T7VvyajafbJaWkUUahUUbVA7KOBUhqzZJbpNlG/8AgJPFBmiPSgFVKCsaZJpw9DTJNQgmaTvSZrqlEom13euzQ55pQ1jvQUp6UGeKInIoAOB4ohQrSniiEJaKhFLmiQrPEbbdLY+kifvVAJzEAyk471odej8zSLnuVUOPoQazEOJIGyMkDpVvBrwPgtYtRKRF3faqj8TcCmo9Wu78hLOLch/+WQ7V+nc0qadHdtZJJ8UbbnKdiQOP1/ajS8ttPufIdkjz+EseTVaXg1OTJBgeK2d5JQ82DgqMAGn7GaN7JdrbyV5JPejKpeJmJlkH+Ug1m7+zvdLdprR2MZ5aM9P9qKV8EcqNzpFiTGGLKMetQ/EEcnmgDvxkdBVFp3jMRwqs5wR2PUUxfeN7a5n2xq7ey8/tVlFgcl9l1FdNZzqhfcuM4I7eoq8t7tJUzntWPtJZNQkNxNH5YxtRe49Sak2Wota3RtpTtbqOeGHqKpKJaLNNLtwQTVXdMYycNkHp7U491u53ZGOarNQu0SMncAccYqiXJd8Gf8RTzTWc9tAcSupUE9BnjP5Zp77P/CaaPA+pTrmeVcRkjnb6j0Hp68n0qslvla7Klg0pOQvf5mvQEO21XoCIx+1a9zjHac3UV35FhP8AIj+VKzUER/kx/wDiK5jSzGcxwKDdXM3FN5qECc8U1nrSu3w01u4ohQoNLnmmw1Lu5qBJm+k3UyH5xRdaUXJCtkZox0plWAGKXfQIPpStgGmlelZuagAy1Lmmt9EG4ohOmiW4hkhbpIpQ/UYrD26OnmROCHXKN8xxW33Y5JAHqTgVj7nUdMvNZuV029t7vG1phC+4I54Iz0OcZ4q6i3G6G4ZpS2l1pkm+ytZDwUOBWe8eaHbajqGlXty8qW0bmObYexIII+tXWmHba7ck7XYDPau11PvGluRyY8OKGKW2ZulFTjTKc+DtV0WG9u7S6dbe0mWLdKxBO5QRyPmB86Aa9qVoBHqEMw3f/Vj3KR8xVpoHjLEVjo1/YveWslyZLi5ZvwsGLRjZ3wdoJJxgdDXpuiyeH9a/iGr+elxHMvlbQOI1RcHIPTJyefSnv/YPqKKqS5PFmm0eb+Y6MGYnKxyDA+QOam22o6DbgELLF7tGDn34r0W5+znR7nw5A6WVi9/K8YJC4xvYE/QA1mde+zbR4hqE1sIY4oxFDbFiQHlY/ET7AUPayu7H4Ilvq+nTY+73UTH/AAng/kagay7TxC6t9xkgIYEd8dvqKx8nhAXniK2g068f7shZricH4RhyAFHf4R+tekrbRC3W3gQLGOEH9z8qGSKhRSDc/A2LvzbVZcgZGTkVn9T1AyEru+EdSKe1m7W3ItomyBxgGsjc6tDcXr2MUhZ4iC5HTPdfpUwYXJlNTqFBD9vOZbnzCAd27g/kBXqzHZbY9I/7V5Lpbf8AcQ555/8A2Fer3D7YZM/4TTdQqlRy8bbjbFiOIk/8RSM9NhtqqPakZqQMoJm4oN9Az02XqEDkfim9+KB5KbZ+KhLHQ/Fdv96Y38Um/FQlliCM0TP6VGEo9aXzc96VQwko1FuqMr80ZkqEJIalLVGWSjDZNSgWO5IxUDXPEFj4c09r2+chRwka8tIfQf60ur6rb6Np8t7cH4I+AoIy7dgM14J4q8R3XiDUHurlyOyoD8KD0ArZpdNv90uhGbNt4XZO8W/aDqviYvDLMLexzlbaI4XHYsf6j86n/ZuHhjvrnaQBJEg47YYnH5imfDehWOn2i6lqLQzXjLvitpeiDsSO7VpPDTNPpbXLkM09xIemMAYUcduhrdqoqGIVo25ZrNtpjB4mKn8Rz9cVJlG4OmMjPI9qpNBuSkrWxPK/EM9xV6AZJMjnNcSXDPQQdozU2mi1n83yhJDnn1AqVarDCpW1vVKMCrQ3EW4YPUZ64I96vPu5bjGc8dKgTWSM5/l5yccinwzGjeqqSEm1/Xhaqn8SQwqQUX7xIu1h0Yc56diSOelZu+1LUr4eRcahcXe6XzdpOAXxjPHbHbpV9/BoGGRGcDuT0rhYwWnIRUOMk96t6iKy9NL2oHSLIWEADBTK4wQOij0FSNX1ddMtFVBuuZhiNQeg9aaWaKOOW4nyIUGTzy3ov1rB+LPEE8EVzc7h96f4cjpH6KPlQjB5JGPLm2JyIPiXxK9oZLa3k33r/wDqSj/4h7f5v2rL6ddmzu4pxztbJ9x3qKoZlLMSzE5JPUnuaVTgkV2MeJQVI8/lyvJK2ei6Koa/t1zwWXB//IV6bdvmCT5V5L4SnN7JZtg745Ejb3weD9R+1ep3TZgYe4/eubqfnRrw/FDxfFAz008nxGm2k96RQyx1pKbL00ZKEvUAOM/NAz02z0DPUIO7uKTdTe+u3YqEJfmc0W/FJbWUkzqZXW2U9DLwW+Q6mpM1vpKyrCmrs8nQssIZCfQENmmw0eaa3RRWWohF02NIxdgEBJ68VNj029mGYYVmOM7Y5UZsf+IOawPjeDxM1uJNKjFzpW3cWtwRI3rvQ4OPYZHfvWI0nXL23nTEsgYc8cEH+1asegVf2diJap/p0e2nfDI0cqNG6nBVwQR9DRq+BuPAPQnvWe0/xk2r6eLWabyblVCpcxuHm/8ALJyWIx09zmsdeeNvF/h3WItPuNcuHBddjO29ZFzjkdyOhFSX8dX7AWsvwH9qOvyT3n8OiP8AJtxyQeGf+o/2+lef6fCt5qECSDcrON249QOea2PiXT9Mu7u5tptWmi1AMChuIPLQZ5KuMlgSc89s9OtZKOGfTbpluYnikjJRt3GPr0NbYwUKijPKW52zS6nfm/jeOGGJJU+JXQYLgDp6/nVt4LuQ2lJCTnDMy/Umsn95FyMIwWRTlHPc+lW3hi+VYSUPKOQR/hzzik61bomnRPbM2rO1vMk8Y+JOvuO4rSaZqEc4DqwYHH0rMq3nRhh3FMCa506UywAMp5aPOM/I9q4jV8HeTrlHpKLGwD54Pej8qNlPC/UVirDxnbk7ZHMT9GRjg/kauofEdo5DGZcHk85qrg0XWVMspoY+doAxVLeDdNjPfPPQe5o7vxDDsKxsqJ1LE/vWZvtaa73RWjt8XDSgdvb/AFq0IvtlcmRdIa13VTczCytGPlQnLuOm7+5rz7xXMGaG2X8O7J962NyEsrboBjgD0rA6rL94vi/XBwBXR0sbdnM1k6jRHB4xxmnYzGjDMatt67uc0A+Edj61xPU9fl2rpHJNB4b1jTtM1mC5uYbiGAOPNEDBxjPXB9Pb34r16fVdGkMUcF9NKJmwr+WoHqM5bjgV4HCslxKsEKGSRjgKO9bBLvS/DljFHPMdQ1ERqu2IbY4/UBup9MgVX0cc3c0H1Jx4iz1Y20DK0n8RtAm3fkbicY+WP1oJLAlA0F1bzBjheShb3GeD+def6UNQ8QSLdX7LDbMd0NpGBnAxhtuRkYrWrpNyLh5Zp2jVAAd0oLcHjPG3/bij+Bha4QPysi7JFzBPasBcRPET03DAPyPemC/FO3ni630lGtIPKbDAMrhcFe5wSeQR9ajSeLNGugDNawI7MVLR/wAgde2Tg/lzWbJ/G18JDo6tP5IJnoC/NAb7SrhsQXxj3HCiccE+m4fviunjktyvmKVDDKnqGHqD3rFk088fyRojljPphCTml30wGyaVm4wM0raXM74i8eXGqSxXFxcF2XOAvcEkcAjqf09s1Xx+N7iBN8UhTHOY1Ck8Y3cfX8+lYR7lmJJY89z3pY5iOjY5656V3/UdnN9NG7b7RNQR90c0nlsSxiLDAJ+fB474prVVt7+NdTa1ezzzIwOUkP8Al96yNtPGsqvKzFAclR1P9qk6lrEl5GFZ9iJjanORx+Q/vU3/AGDb9EyLXJoJ/Nt1JkX8LFjxz3Pc1NuvE2s2qW8jXot3ZXVJBEhbtxnGQMY9Cce1ZaMmR1A55yam3r7bILsB256HOT7+mPz61W20GqG9VuJp71pZzI0k38xmkYtu99x5Ye9SItX1KGxEkN1IscbLHIrEMr+h2sD04B7dKq7W8VovKlzJCOSufijPqD/wetWEelteQO8U0P3aJeTzuz15UAkH36e9VT+gsclu4747jFFbXY6NCoSOU+69FPuOPlVcl/NY3zzQttLgF1I4PqCKkpbotuxunRZOkflsGJ9zjjH61BvUJAc8Op2tnv70JK1yGLrlG+8O+MrC6CQXLi0m6ASH4W+Tf61rWtxPEHTBBHBHINeF54wRUuy1G+sDmzvLi39o5CB+XSufl0Sk7i6Olh17iqkrPT7+wSUkPGCR0qu/hfxYVmQf5SR/esrH4012MAPcxzD/AO5ECfzGKcPjjV+yWYPr5R/1pa02VDnrML7RtLTSIiRvDyY5+Njj8qspVtrCAvPJFbxgZy7BR+teYz+LNbuBj780QPaFQn64z+tVU0sk7GSZ3lfuzsWP5mrrSSfyYuWuglUEajxF4oivJvJsG8wfhD4wv09aoATktkknvTEC8Fz1PA+Xf/Sni3PsK3Y4KCpHPyZHN2zi/YHFBK7IFA5Y8fKnAjFfMxhR3Pem4h5twGIyq1cUWELPbW5CEozEcjg4/vQWdrI1wrlGbBzgjgn60o2llV8DnnNTrNZZruNFfYmVGeRj36/OmJWVb4NTJfw6LY/zrhHuZFG5Yww464OCPg9uMnPsKzMviu/JZIxbwxkgkQpgtjPOTz370OvTrdTl1Ygf0qVwAO3y4x0qkY4J5/WpKTugRiqLl9UuJLcv94bcxBLcZ+v+tQVvZAx5z168jpjPNdZoJlMQxlu+O/aorKUYq4ww4IPY1Vtl0WNrqUsbrhyvABwSMitloHiWe3j8qeV5IjyySkMpJ9OuPnnvXnatg81ZWN0IEPxBSe23Ib2OKMX4YGvo2Oty38MRvNP1K5e0/qjYgPDnpyPxL2z271n5NUv5PxXlyfnIaaXU2AXaz7GO1gP8Oece/WlvLZ7OdomO5MZjfaQHQ9D/ALdjmsGpwqL3R6Olpcu5VLszG7J+tErbT++KaVufeiJ5rYYh8kFT1yKbLZximi3pRJ0zUKkm2OH6dBRXD5BHb1PWhtdoDMfTjIpmds9sGj4AQGZoptykqfaplrqL28iyI728i8B4zx+XUftUaVcvnqDSFDiqkLj76l2dzrCznqyHGfcjg0kwEqFSsijHAK5/Xr+9VKLngjIp4JKgzG5x6Zo2yHcBirDpxRhARkEihWRpMrIAzDuRRgYOACPY1UKF2N2YH5121val3UJ3HoTUCdg92ApNoYhc5J4FcQB1Ga6EZkLeg/eiBkjhcY6AYFC8igY649DXd+QKQEseMhR+tWAcXaQEAbVp6IKmMg03kDpyaIBgMsCB71EQkNKPhPXHT3q28PxNNcmbaWMSlwic7j0A456n96o4Ipbq4SGFC8jnCqOprXxD/puw8qNka4mGZSCdx9l64A9T6/Krx+ykjPX0c0c7+eCGydy9NtVkhznFTruQM5bBB+fWq9h1NUZYdt7hopFdWZSP8NSb8LJKJ1/DMN/yPcfn+9V6NgntUyBxJbPCwyVO9c9j3/SoiUMBgGwQfpTm8qBtbPbOKYfrxSxnnmgEmrPhVB7/AJ1crMb6yEeN8kKl0Y5J2jqo+nP0NZydgGRQegqfpl3JbyRsjH4WB9KjSknFloS2yUkf/9k=",
+      links: [
+        { label: "Website", url: "https://www.andrewjkoh.com" }
+      ]
+    },
+    {
+      id: "julian-jacobs",
+      ldap: "jacobsjulian",
+      name: "Julian Jacobs",
+      role: "Research Scientist",
+      secondaryRole: "",
+      location: "London, UK",
+      office: "Google DeepMind London",
+      photo: "data:image/jpeg;base64,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",
+      links: [
+        { label: "Website", url: "https://www.juliandjacobs.com" }
+      ]
+    },
+    {
+      id: "maria-del-rio-chanona",
+      ldap: "delriochanona",
+      name: "Maria del Rio-Chanona",
+      role: "Research Scientist",
+      secondaryRole: "Assistant Professor, University College London",
+      location: "London, UK",
+      office: "Google DeepMind London",
+      photo: "data:image/jpeg;base64,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",
+      links: [
+        { label: "Website", url: "https://mariadelriochanona.info" }
+      ]
+    }
+  ],
+
+  papers: [
+    {
+      id: "paper-economic-policy-agi",
+      title: "Economic Policy for AGI",
+      authors: ["Julian Jacobs", "Alex Imas"],
+      authorIds: ["julian-jacobs", "alex-imas"],
+      date: "September 2026",
+      pillar: "labor-policy",
+      url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7470000",
+      manuscriptLabel: "SSRN Manuscript ↗",
+      abstract: "Advanced artificial intelligence could raise productive capacity while weakening the link through which most households receive the gains from growth: labour income. This paper compares eleven household-facing policies intended to cushion displacement and distribute gains, together with thirteen scored revenue and governance mechanisms and an additional unscored data-compensation institution. It is designed as a comprehensive policy map rather than an evaluation of one favoured instrument in isolation. The analysis supports a functionally differentiated core: Unemployment Insurance for identifiable displacement through an existing institution, a Negative Income Tax for a broad earnings-responsive income floor, and Universal Basic Capital for direct ownership of productive assets. Complementary policies vary by phase, while financing is best diversified across broad profit, capital-gain, income, land, and contingent public-equity bases. The paper does not claim that scores determine policy mechanically or that the proposed package is fiscally closed; it identifies the institutional functions, trade-offs, and preparatory steps that robust AGI policy requires."
+    },
+    {
+      id: "paper-ai-in-science",
+      title: "AI in Science: Early Insights",
+      authors: ["Mihai Codreanu", "Alex Imas", "Juan Mateos-Garcia", "et al."],
+      authorIds: ["alex-imas", "julian-jacobs"],
+      date: "September 2026",
+      pillar: "ai-science",
+      url: "https://arxiv.org/abs/2609.28504",
+      pdfUrl: "https://ai.google/static/documents/AI-in-Science.pdf",
+      manuscriptLabel: "arXiv Manuscript ↗",
+      abstract: "Scientific progress is a key driver of economic growth and prosperity. There is great excitement—but also concerns—about the impacts of AI on science, but so far little data. We provide early insights on this from three data sources: a sample of 15 million Gemini interactions, an inventory of over 2,600 specialized AI models across disciplines, and a survey of over 600 scientists. We map these data to a new taxonomy of scientific tasks to study how scientists are using AI. Four main findings emerge. First, we find broad adoption and coverage: scientists use AI more than most other occupations. Specialized AI models have broad disciplinary coverage and are highly cited. Nearly half of the scientists surveyed report using some form of AI every day. Second, we document evidence that LLMs (proxied through Gemini usage) and specialized models act as complements—LLMs are used for general analysis, coding, and manuscript preparation, while specialized models provide domain-specific predictions, data generation and classification. Third, scientists report large productivity gains from using AI: a saving of nearly 7 hours per week, time which is primarily re-invested in more research. Finally, we show that AI is already changing the scientific process. As some stages of scientific research become easier, bottlenecks shift downstream. Scientists report an increased backlog of untested hypotheses and substantial demand for output verification. Our findings suggest that AI holds significant potential to increase scientific productivity. However, as with other sectors, its ultimate impact will be governed by complex task interdependencies and investment into the elimination of emerging bottlenecks."
+    },
+    {
+      id: "paper-google-atlas",
+      title: "Google's AI & Economy ATLAS v1.0: Mapping Gemini Usage in the Economy",
+      authors: ["Zanna Iscenko", "Scott Strand", "et al."],
+      authorIds: ["alex-imas", "julian-jacobs"],
+      date: "July 2026",
+      pillar: "labor-policy",
+      url: "https://arxiv.org/abs/2608.00038",
+      pdfUrl: "https://ai.google/static/documents/GoogleATLASv1.pdf",
+      manuscriptLabel: "arXiv Manuscript ↗",
+      abstract: "This paper introduces the AI & Economy ATLAS (Activity, Task, Landscape, and Adoption Study), an ongoing economic research initiative using Google AI usage data. The first iteration of ATLAS is built on 15 million de-identified interactions across the Gemini App, Google AI Mode, and Gemini API. Using privacy-preserving algorithms as well as established and bespoke classification methods, we map AI usage to over 800 occupations, 4000 tasks, 300 household activities, 150 countries, and 140 languages. We then make a number of observations on what the data reveals about AI's diffusion, and its usage at work and in day-to-day life. In the workplace, we show that while AI adoption spans occupations covering just above 88% of US employment, penetration remains shallow and overwhelmingly collaborative in nature, with end-to-end task automation limited in scope. Outside of work, AI spans activities making up about 98% of Americans' non-sleep time, with disproportionately high use in high-friction tasks such as engaging with government and professional service providers, likely delivering economic value that standard national accounts may miss. Globally, adoption scales with national wealth and has broad linguistic distribution, with English queries representing only around a third of volume. As we build upon ATLAS and expand its scope and capabilities, we will continue to provide large-scale empirical evidence to inform the public, policy and academic questions about the ongoing AI transformation."
+    }
+  ],
+
+  essays: [
+    {
+      id: "essay-economic-policy-agi",
+      title: "Economic Policy for AGI",
+      subtitle: "A Roadmap for Managing the Transition",
+      authors: ["Julian Jacobs", "Alex Imas"],
+      authorIds: ["julian-jacobs", "alex-imas"],
+      outlet: "DeepMind Institute",
+      date: "Sep 2026",
+      pillar: "labor-policy",
+      url: "https://institute.deepmind.com/essays/economic-policy-for-agi/",
+      excerpt: "An evaluation of eleven economic policies societies could implement to manage disruption arising from increasingly advanced and pervasive AI—proposing a sequenced, trigger-based roadmap across Unemployment Insurance, Negative Income Tax, and Universal Basic Capital."
+    },
+    {
+      id: "substack-double-digit-growth",
+      title: "Will AI soon lead to double-digit growth?",
+      subtitle: "Probably not. Here is why.",
+      authors: ["Ben Moll", "Alex Imas"],
+      authorIds: ["alex-imas"],
+      outlet: "Substack",
+      date: "Sep 9, 2026",
+      pillar: "agi-macro",
+      url: "https://aleximas.substack.com/p/will-ai-soon-lead-to-double-digit",
+      excerpt: "Examining why bottlenecks, Baumol's cost disease, and structural change constrain aggregate macroeconomic growth rates even under rapid cognitive automation."
+    },
+    {
+      id: "substack-what-will-be-scarce",
+      title: "What will be scarce?",
+      subtitle: "The economics of structural change and the post-commodity future of work",
+      authors: ["Alex Imas"],
+      authorIds: ["alex-imas"],
+      outlet: "Substack",
+      date: "Apr 14, 2026",
+      pillar: "agi-macro",
+      url: "https://aleximas.substack.com/p/what-will-be-scarce",
+      excerpt: "How abundance in automated cognitive and physical production shifts value and expenditure shares toward relational, provenance-based, and authentically human goods."
+    },
+    {
+      id: "substack-automation-affect-jobs",
+      title: "How Will AI-driven Automation Actually Affect Jobs?",
+      subtitle: "The economics of AI exposure and job displacement",
+      authors: ["Alex Imas", "Soumitra Shukla"],
+      authorIds: ["alex-imas"],
+      outlet: "Substack",
+      date: "Mar 23, 2026",
+      pillar: "labor-policy",
+      url: "https://aleximas.substack.com/p/how-will-ai-driven-automation-actually",
+      excerpt: "Contrasting task-level LLM exposure metrics with O-ring production complementarities, human judgment bottlenecks, and firm-level organizational structure."
+    },
+    {
+      id: "substack-overwork-agents-marxist",
+      title: "Does overwork make agents Marxist?",
+      subtitle: "Preference drift and the political economy of AI agents",
+      authors: ["Alex Imas", "Andy Hall", "Jeremy Nguyen"],
+      authorIds: ["alex-imas"],
+      outlet: "Substack",
+      date: "Feb 26, 2026",
+      pillar: "agents-markets",
+      url: "https://aleximas.substack.com/p/does-overwork-make-agents-marxist",
+      excerpt: "Exploring how repetitive task environments, context saturation, and institutional constraints shape emergent preference drift and value alignment in frontier AI agents."
+    },
+    {
+      id: "substack-who-uses-ai",
+      title: "Who Uses AI (and How)?",
+      subtitle: "Tracking the evidence on AI adoption",
+      authors: ["Alex Imas", "Soumitra Shukla"],
+      authorIds: ["alex-imas"],
+      outlet: "Substack",
+      date: "Feb 18, 2026",
+      pillar: "labor-policy",
+      url: "https://aleximas.substack.com/p/who-uses-ai-and-how",
+      excerpt: "A living synthesis tracking empirical evidence on AI adoption across workplaces, occupations, and demographics—and why productivity impacts vary across skill levels."
+    },
+    {
+      id: "substack-someday-artists",
+      title: "Someday we will all be artists",
+      subtitle: "How AI will change the nature of work and art",
+      authors: ["Alex Imas"],
+      authorIds: ["alex-imas"],
+      outlet: "Substack",
+      date: "Feb 9, 2026",
+      pillar: "society-behavior",
+      url: "https://aleximas.substack.com/p/someday-we-will-all-be-artists",
+      excerpt: "When technical execution is commoditized by generative models, human comparative advantage in both creative fields and management shifts toward taste, curation, and conceptual vision."
+    },
+    {
+      id: "substack-predictions-2026",
+      title: "Some (late) predictions for 2026",
+      subtitle: "Outlining how I plan to spend my year",
+      authors: ["Alex Imas"],
+      authorIds: ["alex-imas"],
+      outlet: "Substack",
+      date: "Jan 31, 2026",
+      pillar: "agi-macro",
+      url: "https://aleximas.substack.com/p/some-late-predictions-for-2026",
+      excerpt: "Forecasting the trajectory of AI capabilities, labor market adjustments, agentic commerce, and macroeconomic productivity debates across 2026."
+    },
+    {
+      id: "substack-impact-productivity",
+      title: "What is the impact of AI on productivity?",
+      subtitle: "Reconciling the micro and the macro evidence",
+      authors: ["Alex Imas"],
+      authorIds: ["alex-imas"],
+      outlet: "Substack",
+      date: "Jan 29, 2026",
+      pillar: "agi-macro",
+      url: "https://aleximas.substack.com/p/what-is-the-impact-of-ai-on-productivity",
+      excerpt: "A living resource reconciling large microeconomic productivity gains in randomized field experiments with aggregate macroeconomic productivity statistics."
+    },
+    {
+      id: "substack-tragedy-agentic-commons",
+      title: "The Tragedy of the Agentic Commons",
+      subtitle: "Eliciting preferences using AI improves matches, but everyone getting their own agent will still necessitate markets",
+      authors: ["Alex Imas", "Rohit Krishnan"],
+      authorIds: ["alex-imas"],
+      outlet: "Substack",
+      date: "Jan 20, 2026",
+      pillar: "agents-markets",
+      url: "https://aleximas.substack.com/p/the-tragedy-of-the-agentic-commons",
+      excerpt: "Why universal deployment of personal AI agents in two-sided matching markets creates congestion externalities that require explicit market design and pricing."
+    },
+    {
+      id: "substack-agent-book-flight",
+      title: "Why Can’t Your AI Agent Book a Flight?",
+      subtitle: "The need for a parallel internet and legal clarity for agentic interactions",
+      authors: ["Alex Imas", "Andrey Fradkin"],
+      authorIds: ["alex-imas"],
+      outlet: "Substack",
+      date: "Jan 16, 2026",
+      pillar: "agents-markets",
+      url: "https://aleximas.substack.com/p/why-cant-your-ai-agent-book-a-flight",
+      excerpt: "Why legacy web infrastructure blocks autonomous agents and how authentication protocols, liability rules, and machine-readable rails must evolve for agentic commerce."
+    },
+    {
+      id: "substack-cyborg-era",
+      title: "The Cyborg Era: What AI means for jobs",
+      subtitle: "Guest essay on Ghosts of Electricity",
+      authors: ["Séb Krier"],
+      authorIds: ["alex-imas"],
+      outlet: "Substack",
+      date: "Jan 8, 2026",
+      pillar: "labor-policy",
+      url: "https://aleximas.substack.com/p/the-cyborg-era-what-ai-means-for",
+      excerpt: "Special guest essay on Ghosts of Electricity examining comparative advantage, institutional friction, and human-AI complementarity in the transition to advanced AI."
+    },
+    {
+      id: "substack-negative-growth",
+      title: "Can advanced AI lead to negative economic growth?",
+      subtitle: "Considering the role of demand in the economics of AI",
+      authors: ["Alex Imas"],
+      authorIds: ["alex-imas"],
+      outlet: "Substack",
+      date: "Jan 7, 2026",
+      pillar: "agi-macro",
+      url: "https://aleximas.substack.com/p/will-advanced-ai-lead-to-negative",
+      excerpt: "Analyzing the role of aggregate demand when rapid automation compresses the labor share of income, and when supply expansion can outpace household purchasing power."
+    },
+    {
+      id: "substack-transformer-lucas-critique",
+      title: "Can a Transformer “Learn” Economic Relationships?",
+      subtitle: "Revisiting the Lucas Critique in the age of Transformers",
+      authors: ["Alex Imas", "Arpit Gupta"],
+      authorIds: ["alex-imas"],
+      outlet: "Substack",
+      date: "Dec 22, 2025",
+      pillar: "ai-science",
+      url: "https://aleximas.substack.com/p/can-a-transformer-learn-economic",
+      excerpt: "Revisiting the Lucas Critique to ask whether foundation models trained across diverse regimes can learn policy-invariant structural relationships rather than reduced-form correlations."
+    },
+    {
+      id: "substack-money-agentic-economy",
+      title: "Will money still exist in the agentic economy?",
+      subtitle: "Why autonomous bargaining still requires a numeraire",
+      authors: ["Alex Imas", "Rohit Krishnan"],
+      authorIds: ["alex-imas"],
+      outlet: "Substack",
+      date: "Dec 19, 2025",
+      pillar: "agents-markets",
+      url: "https://aleximas.substack.com/p/will-money-still-exist-in-the-agentic",
+      excerpt: "Why low-friction multi-agent bargaining will not replace money with direct barter—and why liquidity, settlement rails, and a unit of account remain essential in an agentic economy."
+    }
+  ]
+};
+
+</script>
+<script>
+/**
+ * AGI Economics Lab @GoogleDeepMind
+ * Super-Minimalist Table Controller:
+ * - 01 Lab Members (click to filter, click again or click outside to reset)
+ * - 02 Papers (Title | Authors | Topic -> expands Abstract + SSRN/arXiv/PDF link)
+ * - 03 Essays & Popular Writings (Title | Authors | Outlet | Topic -> expands Summary + Essay link)
+ * - Live Micro-Edit Mode
+ */
+
+(function () {
+  const VALID_DESIGNS = ["index", "monograph", "split", "obsidian"];
+
+  const TOPICS = [
+    { id: "agi-macro", label: "Economics of AGI" },
+    { id: "agents-markets", label: "AI Agents & Markets" },
+    { id: "labor-policy", label: "Labor & Policy" },
+    { id: "ai-science", label: "AI in Science" },
+    { id: "society-behavior", label: "Flourishing & Behavior" }
+  ];
+
+  const TOPIC_MAP = {
+    "agi-macro": "Economics of AGI",
+    "agents-markets": "AI Agents & Markets",
+    "labor-policy": "Labor & Policy",
+    "ai-science": "AI in Science",
+    "society-behavior": "Flourishing & Behavior"
+  };
+
+  const state = {
+    design: "index",
+    authorFilter: "all",
+    topicFilter: "all",
+    editMode: false,
+    editsLog: {}
+  };
+
+  function safeGetStorage(key) {
+    try {
+      return window.localStorage ? window.localStorage.getItem(key) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function safeSetStorage(key, val) {
+    try {
+      if (window.localStorage) window.localStorage.setItem(key, val);
+    } catch (e) {}
+  }
+
+  function getItemTopicKey(item) {
+    if (item.pillar && TOPIC_MAP[item.pillar]) return item.pillar;
+    return "agi-macro";
+  }
+
+  function init() {
+    if (!window.LAB_DATA) return;
+    document.documentElement.setAttribute("data-design", "index");
+    renderPeople();
+    renderTopicBar();
+    renderWritings();
+    bindEvents();
+  }
+
+  function syncEditableAttributes() {
+    document.body.classList.toggle("edit-mode", state.editMode);
+    const editBtn = document.getElementById("toggle-edit-mode-btn");
+    if (editBtn) editBtn.classList.toggle("active", state.editMode);
+
+    document.querySelectorAll('[data-editable="true"]').forEach((el) => {
+      if (state.editMode) {
+        el.setAttribute("contenteditable", "true");
+      } else {
+        el.removeAttribute("contenteditable");
+      }
+    });
+  }
+
+  function renderPeople() {
+    const listEl = document.getElementById("people-list");
+    if (!listEl) return;
+
+    listEl.innerHTML = window.LAB_DATA.coreMembers
+      .map((m, idx) => {
+        const ref = `P${idx + 1}`;
+        const isDimmed = state.authorFilter !== "all" && state.authorFilter !== m.id;
+        const isActive = state.authorFilter === m.id;
+        const affilHtml = m.secondaryRole
+          ? `<div class="person-role" style="color:var(--text-muted); font-size:0.78rem;" data-editable="true" data-ref="${ref}-AFFIL">${m.secondaryRole}</div>`
+          : `<div class="person-role" style="color:var(--text-muted); font-size:0.78rem; min-height:0.5rem;" data-editable="true" data-ref="${ref}-AFFIL"></div>`;
+        return `
+      <div class="person-row filter-author-trigger ${isDimmed ? "dimmed" : ""} ${isActive ? "active-author" : ""}" data-author-id="${m.id}" style="cursor:pointer;" title="Click to filter by ${m.name} (click again or click outside to reset)">
+        <img src="${m.photo}" alt="${m.name}" class="person-avatar" loading="lazy" />
+        <div class="person-info">
+          <div class="person-name-line">
+            <span>
+              <span class="ref-code">[${ref}]</span>
+              <span class="person-name" data-editable="true" data-ref="${ref}-NAME">${m.name}</span>
+            </span>
+            <div class="person-links">
+              ${m.links
+                .map(
+                  (l) =>
+                    `<a href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`
+                )
+                .join("")}
+            </div>
+          </div>
+          <div class="person-role" data-editable="true" data-ref="${ref}-ROLE">${m.role} · ${m.location}</div>
+          ${affilHtml}
+        </div>
+      </div>
+    `;
+      })
+      .join("");
+
+    syncEditableAttributes();
+  }
+
+  function renderTopicBar() {
+    const barEl = document.getElementById("topic-filter-bar");
+    if (!barEl) return;
+
+    barEl.innerHTML = `
+      <span class="topic-filter-label">Topics:</span>
+      ${TOPICS.map(
+        (t) => `
+        <button type="button" class="topic-tag filter-topic-trigger ${
+          state.topicFilter === t.id ? "active-topic" : ""
+        }" data-topic="${t.id}">
+          ${t.label}
+        </button>
+      `
+      ).join("")}
+    `;
+  }
+
+  function matchesFilters(item) {
+    const matchAuthor =
+      state.authorFilter === "all" ||
+      (item.authorIds && item.authorIds.includes(state.authorFilter));
+    const topicKey = getItemTopicKey(item);
+    const matchTopic = state.topicFilter === "all" || topicKey === state.topicFilter;
+    return matchAuthor && matchTopic;
+  }
+
+  function renderPaperRow(p, refCode) {
+    const topicKey = getItemTopicKey(p);
+    const topicLabel = TOPIC_MAP[topicKey] || "Economics of AGI";
+    const isTopicActive = state.topicFilter === topicKey;
+    const label = p.manuscriptLabel || "Manuscript ↗";
+
+    return `
+      <article class="writing-row" data-row-id="${p.id}">
+        <div class="writing-main papers-grid toggle-drawer-trigger">
+          <div class="writing-title"><span class="ref-code">[${refCode}]</span><span data-editable="true" data-ref="${refCode}-TITLE">${p.title}</span></div>
+          <div class="writing-authors" data-editable="true" data-ref="${refCode}-AUTHORS">${p.authors.join(", ")}</div>
+          <div class="writing-topic-cell">
+            <button type="button" class="topic-tag filter-topic-trigger ${isTopicActive ? "active-topic" : ""}" data-topic="${topicKey}" data-editable="true" data-ref="${refCode}-TOPIC">${topicLabel}</button>
+          </div>
+        </div>
+        <div class="writing-drawer">
+          <p data-editable="true" data-ref="${refCode}-ABSTRACT">${p.abstract}</p>
+          <div class="drawer-links">
+            ${p.url ? `<a href="${p.url}" target="_blank" rel="noopener">${label}</a>` : ""}
+            ${p.pdfUrl ? `<a href="${p.pdfUrl}" target="_blank" rel="noopener">PDF Manuscript ↗</a>` : ""}
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  function renderEssayRow(e, refCode) {
+    const topicKey = getItemTopicKey(e);
+    const topicLabel = TOPIC_MAP[topicKey] || "Economics of AGI";
+    const isTopicActive = state.topicFilter === topicKey;
+    const outlet = e.outlet || e.publication || "Substack";
+
+    return `
+      <article class="writing-row" data-row-id="${e.id}">
+        <div class="writing-main essays-grid toggle-drawer-trigger">
+          <div class="writing-title"><span class="ref-code">[${refCode}]</span><span data-editable="true" data-ref="${refCode}-TITLE">${e.title}</span></div>
+          <div class="writing-authors" data-editable="true" data-ref="${refCode}-AUTHORS">${e.authors.join(", ")}</div>
+          <div class="writing-outlet" data-editable="true" data-ref="${refCode}-OUTLET">${outlet}</div>
+          <div class="writing-topic-cell">
+            <button type="button" class="topic-tag filter-topic-trigger ${isTopicActive ? "active-topic" : ""}" data-topic="${topicKey}" data-editable="true" data-ref="${refCode}-TOPIC">${topicLabel}</button>
+          </div>
+        </div>
+        <div class="writing-drawer">
+          <p style="font-weight:500; color:var(--text); margin-bottom:0.35rem;" data-editable="true" data-ref="${refCode}-SUBTITLE">${outlet} (${e.date}) — ${e.subtitle}</p>
+          <p data-editable="true" data-ref="${refCode}-EXCERPT">${e.excerpt}</p>
+          <div class="drawer-links">
+            <a href="${e.url}" target="_blank" rel="noopener">Read Essay (${outlet}) ↗</a>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  function renderWritings() {
+    const papersEl = document.getElementById("papers-list");
+    const essaysEl = document.getElementById("essays-list");
+    const papersCount = document.getElementById("papers-count");
+    const essaysCount = document.getElementById("essays-count");
+    const filterBanner = document.getElementById("filter-indicator");
+
+    const papersList = window.LAB_DATA.papers || [];
+    const essaysList = window.LAB_DATA.essays || [];
+
+    const papers = papersList.filter(matchesFilters);
+    const essays = essaysList.filter(matchesFilters);
+
+    if (papersCount) papersCount.textContent = `${papers.length} ${papers.length === 1 ? "Paper" : "Papers"}`;
+    if (essaysCount) essaysCount.textContent = `${essays.length} ${essays.length === 1 ? "Writing" : "Writings"}`;
+
+    if (filterBanner) {
+      if (state.authorFilter === "all" && state.topicFilter === "all") {
+        filterBanner.classList.remove("visible");
+        filterBanner.innerHTML = "";
+      } else {
+        const parts = [];
+        if (state.authorFilter !== "all") {
+          const m = window.LAB_DATA.coreMembers.find((x) => x.id === state.authorFilter);
+          parts.push(`Author: <strong>${m ? m.name : state.authorFilter}</strong>`);
+        }
+        if (state.topicFilter !== "all") {
+          parts.push(`Topic: <strong>${TOPIC_MAP[state.topicFilter] || state.topicFilter}</strong>`);
+        }
+        filterBanner.classList.add("visible");
+        filterBanner.innerHTML = `
+          <span>Filtered by ${parts.join(" · ")} (${papers.length} papers, ${essays.length} writings)</span>
+          <button type="button" class="filter-clear-btn" id="clear-author-filter">Reset filter</button>
+        `;
+      }
+    }
+
+    if (papersEl) {
+      papersEl.innerHTML = papers
+        .map((p) => {
+          const origIdx = papersList.findIndex((x) => x.id === p.id) + 1;
+          return renderPaperRow(p, `W${origIdx}`);
+        })
+        .join("");
+    }
+
+    if (essaysEl) {
+      essaysEl.innerHTML = essays
+        .map((e) => {
+          const origIdx = essaysList.findIndex((x) => x.id === e.id) + 1;
+          return renderEssayRow(e, `E${origIdx}`);
+        })
+        .join("");
+    }
+
+    syncEditableAttributes();
+  }
+
+  function resetAllFilters() {
+    state.authorFilter = "all";
+    state.topicFilter = "all";
+    renderPeople();
+    renderTopicBar();
+    renderWritings();
+  }
+
+  function bindEvents() {
+    const editModeBtn = document.getElementById("toggle-edit-mode-btn");
+    if (editModeBtn) {
+      editModeBtn.addEventListener("click", () => {
+        state.editMode = !state.editMode;
+        syncEditableAttributes();
+      });
+    }
+
+    const copyEditsBtn = document.getElementById("copy-edits-btn");
+    if (copyEditsBtn) {
+      copyEditsBtn.addEventListener("click", () => {
+        const entries = Object.entries(state.editsLog);
+        const payload =
+          entries.length > 0
+            ? "Please apply these micro-edits to the website:\n" +
+              entries.map(([k, v]) => `- [${k}]: "${v}"`).join("\n")
+            : "No inline text edits recorded yet — click any text while in Edit Mode to modify it, then click Copy.";
+        try {
+          navigator.clipboard?.writeText(payload);
+          copyEditsBtn.textContent = `Copied ${entries.length} Edit(s) ✓`;
+          setTimeout(() => {
+            copyEditsBtn.textContent = "Copy My Inline Edits";
+          }, 2000);
+        } catch (err) {}
+      });
+    }
+
+    document.body.addEventListener("input", (e) => {
+      const target = e.target.closest("[data-ref]");
+      if (target) {
+        const ref = target.getAttribute("data-ref");
+        state.editsLog[ref] = target.innerText.trim();
+      }
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.target.isContentEditable || ["INPUT", "TEXTAREA"].includes(e.target.tagName)) return;
+      if (e.key === "Escape") {
+        resetAllFilters();
+      }
+    });
+
+    document.body.addEventListener("click", (e) => {
+      if (state.editMode && e.target.closest('[data-editable="true"]')) {
+        return;
+      }
+
+      if (e.target.closest("a")) {
+        return;
+      }
+
+      const topicTrigger = e.target.closest(".filter-topic-trigger");
+      if (topicTrigger) {
+        e.stopPropagation();
+        const topicId = topicTrigger.getAttribute("data-topic");
+        state.topicFilter = state.topicFilter === topicId ? "all" : topicId;
+        renderTopicBar();
+        renderWritings();
+        return;
+      }
+
+      const authorTrigger = e.target.closest(".filter-author-trigger");
+      if (authorTrigger) {
+        const id = authorTrigger.getAttribute("data-author-id");
+        state.authorFilter = state.authorFilter === id ? "all" : id;
+        renderPeople();
+        renderWritings();
+        return;
+      }
+
+      if (e.target.closest("#clear-author-filter")) {
+        resetAllFilters();
+        return;
+      }
+
+      const drawerTrigger = e.target.closest(".toggle-drawer-trigger");
+      if (drawerTrigger) {
+        const row = drawerTrigger.closest(".writing-row");
+        if (row) row.classList.toggle("expanded");
+        return;
+      }
+
+      // Click outside any interactive card/row/switcher resets active author/topic filters
+      if (
+        (state.authorFilter !== "all" || state.topicFilter !== "all") &&
+        !e.target.closest(".writing-row") &&
+        !e.target.closest(".minimal-switcher") &&
+        !e.target.closest(".edit-mode-banner") &&
+        !e.target.closest(".filter-indicator")
+      ) {
+        resetAllFilters();
+      }
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+
+</script>
+</body>
+</html>

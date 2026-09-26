@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-design="index">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGI Economics Lab @GoogleDeepMind</title>
+  <meta name="description" content="AGI Economics Lab @GoogleDeepMind, directed by Alex Imas. We study the economics of Artificial General Intelligence—spanning autonomous agent markets, organizational scaling, labor transitions, scientific discovery, and economic policy." />
+  <link rel="stylesheet" href="static/css/styles.css" />
+</head>
+<body>
+
+  <div class="page-shell">
+    <!-- Left Spine / Top Header -->
+    <header class="site-intro">
+      <h1 class="lab-title" data-editable="true" data-ref="HEADER-TITLE">AGI Economics Lab @GoogleDeepMind</h1>
+      <p class="lab-lede" data-editable="true" data-ref="HEADER-LEDE">
+        We study the economics of Artificial General Intelligence—spanning autonomous agent markets, organizational scaling, labor transitions, scientific discovery, and economic policy.
+      </p>
+      <nav class="minimal-nav" aria-label="Sections">
+        <a href="#people"><span class="nav-num">01</span>People</a>
+        <a href="#papers"><span class="nav-num">02</span>Papers</a>
+        <a href="#essays"><span class="nav-num">03</span>Essays &amp; Popular Writings</a>
+      </nav>
+    </header>
+
+    <!-- Main Content Column -->
+    <main>
+      <!-- 01. PEOPLE -->
+      <section class="minimal-section" id="people">
+        <div class="section-head">
+          <h2 class="section-label">01 · Lab Members</h2>
+          <span class="section-meta">Click a name to filter (click outside to reset)</span>
+        </div>
+        <div class="people-list" id="people-list"></div>
+      </section>
+
+      <!-- Active Author/Topic Filter Indicator (Hidden unless filtered) -->
+      <div class="filter-indicator" id="filter-indicator"></div>
+
+      <!-- Lab Research Topics Bar -->
+      <div class="topic-filter-bar" id="topic-filter-bar" aria-label="Filter by Research Topic"></div>
+
+      <!-- 02. PAPERS -->
+      <section class="minimal-section" id="papers">
+        <div class="section-head">
+          <h2 class="section-label">02 · Papers</h2>
+          <span class="section-meta" id="papers-count">3 Papers</span>
+        </div>
+        <div class="writing-table-head papers-grid">
+          <div>Title</div>
+          <div>Authors</div>
+          <div>Topic</div>
+        </div>
+        <div class="writing-list" id="papers-list"></div>
+      </section>
+
+      <!-- 03. ESSAYS & POPULAR WRITINGS -->
+      <section class="minimal-section" id="essays">
+        <div class="section-head">
+          <h2 class="section-label">03 · Essays &amp; Popular Writings</h2>
+          <span class="section-meta" id="essays-count">15 Writings</span>
+        </div>
+        <div class="writing-table-head essays-grid">
+          <div>Title</div>
+          <div>Authors</div>
+          <div>Outlet</div>
+          <div>Topic</div>
+        </div>
+        <div class="writing-list" id="essays-list"></div>
+      </section>
+
+      <footer class="minimal-footer">
+        <span>AGI Economics Lab @GoogleDeepMind</span>
+        <span>New York &amp; London · 2026</span>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Floating Helper Bar when in Micro-Edit Mode -->
+  <div class="edit-mode-banner" id="edit-mode-banner">
+    <span><strong>✎ Micro-Edit Mode Active:</strong> Click any text on the page to edit inline, or reference items by their yellow ID tag (e.g. <code>[W1]</code>, <code>[E1]</code>) in chat.</span>
+    <button type="button" id="copy-edits-btn">Copy My Inline Edits</button>
+  </div>
+
+  <script src="static/js/data.js"></script>
+  <script src="static/js/app.js"></script>
+</body>
+</html>
