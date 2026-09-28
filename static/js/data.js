@@ -102,6 +102,18 @@ window.LAB_DATA = {
       pdfUrl: "https://ai.google/static/documents/GoogleATLASv1.pdf",
       manuscriptLabel: "arXiv Manuscript ↗",
       abstract: "This paper introduces the AI & Economy ATLAS (Activity, Task, Landscape, and Adoption Study), an ongoing economic research initiative using Google AI usage data. The first iteration of ATLAS is built on 15 million de-identified interactions across the Gemini App, Google AI Mode, and Gemini API. Using privacy-preserving algorithms as well as established and bespoke classification methods, we map AI usage to over 800 occupations, 4000 tasks, 300 household activities, 150 countries, and 140 languages. We then make a number of observations on what the data reveals about AI's diffusion, and its usage at work and in day-to-day life. In the workplace, we show that while AI adoption spans occupations covering just above 88% of US employment, penetration remains shallow and overwhelmingly collaborative in nature, with end-to-end task automation limited in scope. Outside of work, AI spans activities making up about 98% of Americans' non-sleep time, with disproportionately high use in high-friction tasks such as engaging with government and professional service providers, likely delivering economic value that standard national accounts may miss. Globally, adoption scales with national wealth and has broad linguistic distribution, with English queries representing only around a third of volume. As we build upon ATLAS and expand its scope and capabilities, we will continue to provide large-scale empirical evidence to inform the public, policy and academic questions about the ongoing AI transformation."
+    },
+    {
+      id: "paper-worker-retraining-wioa",
+      title: "Did US Worker Retraining Reduce Participant Automation Exposure?",
+      authors: ["Julian Jacobs", "Jordan Canedy"],
+      authorIds: ["julian-jacobs"],
+      date: "May 2026",
+      pillar: "labor-policy",
+      url: "https://arxiv.org/abs/2605.03767",
+      pdfUrl: "https://arxiv.org/pdf/2605.03767",
+      manuscriptLabel: "arXiv Manuscript ↗",
+      abstract: "This paper evaluates whether the U.S. Workforce Innovation and Opportunity Act (WIOA) supported American worker resilience to technological automation. Analyzing over 23 million WIOA participation records (2017–2023), we introduce the \"Retrainability Index,\" which measures program outcomes through post-intervention wage recovery and shifts in Routine Task Intensity (RTI). We show WIOA rarely shifts workers into less automation-exposed work, with a significant portion of participants simply returning to their prior field. Successful outcomes are driven mostly by wage gains, possibly due to \"catch-up\" mean reversion, rather than changes in occupation. Outcomes are moderated by a person's prior occupational skill set and area of work, as well as their local economy. We find evidence that employer-led programs—notably apprenticeships—are associated with the highest incidence of success. This suggests the United States' existing public active labor market programming can support baseline wage recovery for vulnerable populations, but is not well-equipped to support the large-scale, cross-industry labor transitions."
     }
   ],
 
