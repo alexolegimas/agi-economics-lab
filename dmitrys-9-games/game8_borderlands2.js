@@ -32,6 +32,24 @@
     return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
   };
 
+  function sub3(a, b) {
+    return { x: a.x - b.x, y: a.y - b.y, z: a.z - b.z };
+  }
+  function cross3(a, b) {
+    return {
+      x: a.y * b.z - a.z * b.y,
+      y: a.z * b.x - a.x * b.z,
+      z: a.x * b.y - a.y * b.x
+    };
+  }
+  function dot3(a, b) {
+    return a.x * b.x + a.y * b.y + a.z * b.z;
+  }
+  function norm3(v) {
+    const len = Math.hypot(v.x, v.y, v.z) || 1;
+    return { x: v.x / len, y: v.y / len, z: v.z / len };
+  }
+
   // ============================================================================
   // 1. STATIC 3D WORLD GEOMETRY (Plateau Sketch Lines, Horizon Mountains, Rocks)
   // ============================================================================
@@ -106,52 +124,76 @@
     { x: 42, y: 23.6, w: 13.0, h: 2.0, seed: 66 }
   ];
 
-  // Build a solid, ground-flush 3D faceted polyhedron boulder mesh
+  // Build a solid, ground-flush 3D faceted polyhedron boulder mesh with guaranteed outward normals
   function createBoulderMesh(bx, bz, rx, ry, rz, seedVal) {
     const bRng = mulberry32(seedVal);
     const sides = 7;
-    const ring0 = []; // ground contact ring (y = 0, widest)
-    const ring1 = []; // mid-lower belt (y = 0.44 * ry)
-    const ring2 = []; // upper shoulder (y = 0.80 * ry)
-    const ring3 = []; // top crown (y = 0.98 * ry)
+    const ring0 = []; // ground contact ring (y = 0)
+    const ring1 = []; // mid-lower belt (y = 0.42 * ry)
+    const ring2 = []; // upper shoulder (y = 0.78 * ry)
+    const ring3 = []; // top crown (y = 0.96 * ry)
 
     for (let i = 0; i < sides; i++) {
-      const a = (i / sides) * Math.PI * 2 + (bRng() - 0.5) * 0.15;
-      const r0 = 0.95 + bRng() * 0.14;
-      const r1 = r0 * (0.82 + bRng() * 0.08);
-      const r2 = r1 * (0.62 + bRng() * 0.10);
-      const r3 = r2 * (0.38 + bRng() * 0.10);
+      // +sin(a) in Z ensures counter-clockwise winding when viewed from outside!
+      const a = (i / sides) * Math.PI * 2 + (bRng() - 0.5) * 0.14;
+      const r0 = 0.94 + bRng() * 0.14;
+      const r1 = r0 * (0.84 + bRng() * 0.08);
+      const r2 = r1 * (0.60 + bRng() * 0.10);
+      const r3 = r2 * (0.36 + bRng() * 0.10);
 
       ring0.push({
         x: bx + Math.cos(a) * rx * r0,
         y: 0.0,
-        z: bz - Math.sin(a) * rz * r0
+        z: bz + Math.sin(a) * rz * r0
       });
       ring1.push({
-        x: bx + Math.cos(a + 0.05) * rx * r1,
+        x: bx + Math.cos(a + 0.06) * rx * r1,
         y: ry * (0.42 + bRng() * 0.08),
-        z: bz - Math.sin(a + 0.05) * rz * r1
+        z: bz + Math.sin(a + 0.06) * rz * r1
       });
       ring2.push({
-        x: bx + Math.cos(a + 0.11) * rx * r2,
+        x: bx + Math.cos(a + 0.12) * rx * r2,
         y: ry * (0.78 + bRng() * 0.08),
-        z: bz - Math.sin(a + 0.11) * rz * r2
+        z: bz + Math.sin(a + 0.12) * rz * r2
       });
       ring3.push({
-        x: bx + Math.cos(a + 0.16) * rx * r3,
+        x: bx + Math.cos(a + 0.18) * rx * r3,
         y: ry * (0.96 + bRng() * 0.06),
-        z: bz - Math.sin(a + 0.16) * rz * r3
+        z: bz + Math.sin(a + 0.18) * rz * r3
       });
     }
 
+    const center = { x: bx, y: ry * 0.25, z: bz };
     const faces = [];
+
+    function addRockFace(verts) {
+      let cx = 0, cy = 0, cz = 0;
+      for (let k = 0; k < verts.length; k++) {
+        cx += verts[k].x;
+        cy += verts[k].y;
+        cz += verts[k].z;
+      }
+      cx /= verts.length;
+      cy /= verts.length;
+      cz /= verts.length;
+      const e1 = sub3(verts[1], verts[0]);
+      const e2 = sub3(verts[2], verts[0]);
+      const n = cross3(e2, e1);
+      const outVec = { x: cx - center.x, y: cy - center.y, z: cz - center.z };
+      // Ensure vertex winding always produces an outward-pointing normal!
+      if (dot3(n, outVec) < 0) {
+        verts = verts.slice().reverse();
+      }
+      faces.push({ verts });
+    }
+
     for (let i = 0; i < sides; i++) {
       const ni = (i + 1) % sides;
-      faces.push({ verts: [ring0[i], ring0[ni], ring1[ni], ring1[i]] });
-      faces.push({ verts: [ring1[i], ring1[ni], ring2[ni], ring2[i]] });
-      faces.push({ verts: [ring2[i], ring2[ni], ring3[ni], ring3[i]] });
+      addRockFace([ring0[i], ring0[ni], ring1[ni], ring1[i]]);
+      addRockFace([ring1[i], ring1[ni], ring2[ni], ring2[i]]);
+      addRockFace([ring2[i], ring2[ni], ring3[ni], ring3[i]]);
     }
-    faces.push({ verts: ring3.slice() });
+    addRockFace(ring3.slice());
 
     return { bx, bz, rx, ry, rz, faces };
   }
@@ -372,26 +414,8 @@
   ];
 
   // ============================================================================
-  // 3. 3D MATH & MESH HELPERS
+  // 3. 3D MESH & SHADING BUILDERS
   // ============================================================================
-  function sub3(a, b) {
-    return { x: a.x - b.x, y: a.y - b.y, z: a.z - b.z };
-  }
-  function cross3(a, b) {
-    return {
-      x: a.y * b.z - a.z * b.y,
-      y: a.z * b.x - a.x * b.z,
-      z: a.x * b.y - a.y * b.x
-    };
-  }
-  function dot3(a, b) {
-    return a.x * b.x + a.y * b.y + a.z * b.z;
-  }
-  function norm3(v) {
-    const len = Math.hypot(v.x, v.y, v.z) || 1;
-    return { x: v.x / len, y: v.y / len, z: v.z / len };
-  }
-
   function transformPoint(p, rx, ry, rz, tx, ty, tz) {
     let x = p.x;
     let y = p.y;
@@ -752,10 +776,7 @@
       const rz = item.endRot.z + spinDecay * item.rotSpins.z * Math.PI * 2;
 
       const beamStartT = item.tSpawn + item.flightDur * 0.72;
-      let beamAlpha = smoothstep(beamStartT, beamStartT + 0.22, localT);
-
-      // Once the Hero Legendary Rifle lands at ~3.5s, let the green_smg body tuck/fade so the
-      // Legendary Rifle silhouette in front of it is 100% clean in frames 033 & 034!
+      const beamAlpha = smoothstep(beamStartT, beamStartT + 0.22, localT);
       const hideBody = item.id === 'green_smg' && localT >= 3.38;
 
       activeLootStates.push({
@@ -1080,7 +1101,6 @@
       enqueueFace(chestBaseTrim[i].verts, chestBaseTrim[i].color, chestBaseTrim[i].strokeW, false, -0.18);
     }
 
-    // Two vertical black structural straps on the chest lower body (bias -0.25 so never occluded by chest panel)
     for (const sx of [-0.66, 0.66]) {
       const strapFaces = buildBoxFaces(sx - 0.09, sx + 0.09, 0.04, 0.695, -0.52, 0.52, {
         base: '#090b0e',
@@ -1091,7 +1111,6 @@
       }
     }
 
-    // Central Front Latch Plate (turns bright glowing green #00ff22 at localT >= 1.80!)
     const latchFaces = buildBoxFaces(-0.19, 0.19, 0.25, 0.41, -0.53, -0.49, {
       base: latchGreen ? '#00ff22' : '#420705',
       strokeWidth: 2.2
@@ -1249,7 +1268,6 @@
         ctx.stroke();
         ctx.restore();
       } else if (cmd.type === 'beam') {
-        // Feathered Vertical Borderlands Rarity Light Pillar (fades smoothly at both base & top!)
         const st = cmd.state;
         const item = st.item;
         const pBase = projectPoint({ x: st.x, y: Math.max(0.04, st.y - 0.04), z: st.z });
@@ -1315,7 +1333,6 @@
 
         ctx.restore();
       } else if (cmd.type === 'sparkles') {
-        // Crisp 3D Sparkle Motes swirling around the Rarity Light Pillar (frames 033 & 034)
         const st = cmd.state;
         const item = st.item;
         const sRng = mulberry32(item.id.length * 9973 + 17);
@@ -1336,7 +1353,6 @@
 
           const env = Math.sin(phase * Math.PI) * st.beamAlpha;
           if (env <= 0.04) continue;
-          // Clamp screen radius so close-up sparkles remain crisp jewel-like motes!
           const rad = clamp((0.014 + (s % 3) * 0.006) * sp.scale, 1.8, 6.2);
 
           const g = ctx.createRadialGradient(sp.x, sp.y, 0, sp.x, sp.y, rad * 2.0);
