@@ -64,6 +64,19 @@ window.LAB_DATA = {
       links: [
         { label: "Website", url: "https://mariadelriochanona.info" }
       ]
+    },
+    {
+      id: "seb-krier",
+      ldap: "sebkrier",
+      name: "Séb Krier",
+      role: "Policy Development & Strategy Manager",
+      secondaryRole: "",
+      location: "New York, NY",
+      office: "Google DeepMind NYC",
+      photo: "static/images/seb_krier.jpg",
+      links: [
+        { label: "Website", url: "https://www.sebkrier.com" }
+      ]
     }
   ],
 
@@ -255,7 +268,7 @@ window.LAB_DATA = {
       title: "The Cyborg Era: What AI means for jobs",
       subtitle: "Guest essay on Ghosts of Electricity",
       authors: ["Séb Krier"],
-      authorIds: ["alex-imas"],
+      authorIds: ["seb-krier", "alex-imas"],
       outlet: "Substack",
       date: "Jan 8, 2026",
       pillar: "labor-policy",
