@@ -69,7 +69,7 @@ window.LAB_DATA = {
       id: "seb-krier",
       ldap: "sebkrier",
       name: "Séb Krier",
-      role: "Policy Development & Strategy Manager",
+      role: "Research Scientist",
       secondaryRole: "",
       location: "New York, NY",
       office: "Google DeepMind NYC",
