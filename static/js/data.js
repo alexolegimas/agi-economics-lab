@@ -9,7 +9,7 @@ window.LAB_DATA = {
     institution: "Google DeepMind",
     director: "Alex Imas",
     locations: ["New York, NY", "London, UK"],
-    updated: "September 2026"
+    updated: "October 2026"
   },
 
   coreMembers: [
@@ -131,6 +131,18 @@ window.LAB_DATA = {
   ],
 
   essays: [
+    {
+      id: "essay-bending-curve-discovery",
+      title: "Bending the Curve of Discovery: AI in Science Today and Tomorrow",
+      subtitle: "Mapping how scientists use AI reveals how the technology can progress from a tool that accelerates research into an engine that expands the frontiers of knowledge",
+      authors: ["Alex Imas", "James Manyika"],
+      authorIds: ["alex-imas"],
+      outlet: "DeepMind Institute",
+      date: "Oct 8, 2026",
+      pillar: "ai-science",
+      url: "https://institute.deepmind.com/essays/bending-the-curve-of-discovery-ai-in-science-today-and-tomorrow/",
+      excerpt: "Mapping how scientists deploy LLMs and specialized AI models like AlphaFold as economic complements—and why downstream verification bottlenecks and institutional reforms will determine how AI expands the scientific frontier."
+    },
     {
       id: "essay-economic-policy-agi",
       title: "Economic Policy for AGI",
