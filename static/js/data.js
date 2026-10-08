@@ -144,6 +144,18 @@ window.LAB_DATA = {
       excerpt: "Mapping how scientists deploy LLMs and specialized AI models like AlphaFold as economic complements—and why downstream verification bottlenecks and institutional reforms will determine how AI expands the scientific frontier."
     },
     {
+      id: "substack-ai-impacted-labor-market",
+      title: "Has AI impacted the labor market yet?",
+      subtitle: "Evaluating the state of the evidence",
+      authors: ["Alex Imas", "Jacob Schaal"],
+      authorIds: ["alex-imas"],
+      outlet: "Substack",
+      date: "Sep 29, 2026",
+      pillar: "labor-policy",
+      url: "https://aleximas.substack.com/p/has-ai-impacted-the-labor-market",
+      excerpt: "A live empirical now-cast of AI's labor market impact—finding muted aggregate effects on unemployment and layoffs alongside mixed evidence on entry-level hiring across regions and surveys."
+    },
+    {
       id: "essay-economic-policy-agi",
       title: "Economic Policy for AGI",
       subtitle: "A Roadmap for Managing the Transition",
