@@ -132,6 +132,18 @@ window.LAB_DATA = {
 
   essays: [
     {
+      id: "essay-ai-is-a-choice",
+      title: "AI Is a Choice: The Narrow but Feasible Path to Collective Good",
+      subtitle: "November/December 2026 Issue",
+      authors: ["Alex Imas", "Mohamed A. El-Erian", "James Manyika"],
+      authorIds: ["alex-imas"],
+      outlet: "Foreign Affairs",
+      date: "Oct 20, 2026",
+      pillar: "agi-macro",
+      url: "https://www.foreignaffairs.com/united-states/ai-choice-imas-el-erian-manyika",
+      excerpt: "Realizing AI's promise as both a general-purpose technology and an engine of discovery is a coordination problem across models, infrastructure, organizational reform, and worker skills—and cooperative game theory shows how stable coalitions can align incentives and share the gains."
+    },
+    {
       id: "essay-bending-curve-discovery",
       title: "Bending the Curve of Discovery: AI in Science Today and Tomorrow",
       subtitle: "Mapping how scientists use AI reveals how the technology can progress from a tool that accelerates research into an engine that expands the frontiers of knowledge",
