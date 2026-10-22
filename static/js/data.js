@@ -132,6 +132,18 @@ window.LAB_DATA = {
 
   essays: [
     {
+      id: "substack-technological-progress-meaning-work",
+      title: "Technological Progress and the Meaning of Work",
+      subtitle: "The personal history of technological change",
+      authors: ["Soumitra Shukla", "Alex Imas"],
+      authorIds: ["alex-imas"],
+      outlet: "Substack",
+      date: "Oct 22, 2026",
+      pillar: "society-behavior",
+      url: "https://aleximas.substack.com/p/technological-progress-and-the-meaning",
+      excerpt: "Tracing over 250 years of technological transitions—from the spinning jenny and the Luddites to AlphaGo and frontier mathematics—to show how automation challenges not just livelihoods, but human identity, craft, and the meaning of work."
+    },
+    {
       id: "essay-ai-is-a-choice",
       title: "AI Is a Choice: The Narrow but Feasible Path to Collective Good",
       subtitle: "November/December 2026 Issue",
