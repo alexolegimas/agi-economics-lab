@@ -82,6 +82,17 @@ window.LAB_DATA = {
 
   papers: [
     {
+      id: "paper-organizing-intelligence",
+      title: "Organizing Intelligence",
+      authors: ["Alex Imas", "Andrew Koh", "Shane Legg"],
+      authorIds: ["alex-imas", "andrew-koh"],
+      date: "October 2026",
+      pillar: "agi-macro",
+      url: "https://storage.googleapis.com/deepmind-media/papers/organizing-intelligence.pdf",
+      manuscriptLabel: "PDF Manuscript ↗",
+      abstract: "When will advances in AI lead to economic transformation? We develop a model of how intelligence, the ability to achieve goals, matters for organizations, the key unit of economic production. Agents (human or AI) with multidimensional capabilities sort endogenously into competing firms. A firm's productivity depends on its agents' capabilities; we distinguish competence, which shifts productivity levels, from coordination, which governs how productivity scales with size. Two differences between AI and humans drive transformation: AI expertise is reproducible while humans' are in fixed supply, and AIs may not face the same limits for coordination as humans. We analyze how equilibrium market structure, productivity, employment, and wages evolve as AI capabilities improve. When AI is more capable than the average human, organizations of complementary humans can nonetheless outperform AI. Increases in AI competence can change the composition of workers within firms and decrease firm size. As AI coordination improves, however, this can break the Coasean ceiling on firm size and the market structure undergoes a phase transition toward large, concentrated AI-heavy firms. Changes in human employment are gradual when AI displaces workers within mixed human-AI firms, or sudden when AI firms outcompete human firms. We decompose wage changes into a technology effect, which changes the value of humans within existing firms, and a reorganization effect as firms adjust size and composition. Reorganization can reverse the technology effect on wages."
+    },
+    {
       id: "paper-economic-policy-agi",
       title: "Economic Policy for AGI",
       authors: ["Julian Jacobs", "Alex Imas"],
@@ -131,6 +142,18 @@ window.LAB_DATA = {
   ],
 
   essays: [
+    {
+      id: "essay-economics-of-intelligence",
+      title: "The Economics of Intelligence: How and when does AGI lead to economic transformation?",
+      subtitle: "Smarter AI will increase productivity, but real economic transformation hinges on agents learning to coordinate",
+      authors: ["Alex Imas", "Andrew Koh", "Shane Legg"],
+      authorIds: ["alex-imas", "andrew-koh"],
+      outlet: "DeepMind Institute",
+      date: "Oct 29, 2026",
+      pillar: "agi-macro",
+      url: "https://institute.deepmind.com/essays/the-economics-of-intelligence/",
+      excerpt: "Why solo agent benchmarks miss organizational competition—and how crossing competence and multi-agent coordination thresholds reshapes wages, employment, and the Coasean boundaries of the firm across four capability regimes."
+    },
     {
       id: "substack-technological-progress-meaning-work",
       title: "Technological Progress and the Meaning of Work",
