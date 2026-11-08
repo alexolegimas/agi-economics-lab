@@ -14,6 +14,32 @@ window.LAB_DATA = {
 
   coreMembers: [
     {
+      id: "pedro-aldighieri",
+      ldap: "paldighieri",
+      name: "Pedro Aldighieri",
+      role: "Research Intern",
+      secondaryRole: "PhD Candidate, Northwestern University",
+      location: "London, UK",
+      office: "Google DeepMind London",
+      photo: "static/images/pedro_aldighieri.jpg",
+      links: [
+        { label: "Website", url: "https://p-aldighieri.github.io" }
+      ]
+    },
+    {
+      id: "maria-del-rio-chanona",
+      ldap: "delriochanona",
+      name: "Maria del Rio-Chanona",
+      role: "Research Scientist",
+      secondaryRole: "Assistant Professor, University College London",
+      location: "London, UK",
+      office: "Google DeepMind London",
+      photo: "static/images/maria_del_rio_chanona.jpg",
+      links: [
+        { label: "Website", url: "https://mariadelriochanona.info" }
+      ]
+    },
+    {
       id: "alex-imas",
       ldap: "imasa",
       name: "Alex Imas",
@@ -40,19 +66,6 @@ window.LAB_DATA = {
       ]
     },
     {
-      id: "maria-del-rio-chanona",
-      ldap: "delriochanona",
-      name: "Maria del Rio-Chanona",
-      role: "Research Scientist",
-      secondaryRole: "Assistant Professor, University College London",
-      location: "London, UK",
-      office: "Google DeepMind London",
-      photo: "static/images/maria_del_rio_chanona.jpg",
-      links: [
-        { label: "Website", url: "https://mariadelriochanona.info" }
-      ]
-    },
-    {
       id: "seb-krier",
       ldap: "sebkrier",
       name: "Séb Krier",
@@ -76,19 +89,6 @@ window.LAB_DATA = {
       photo: "static/images/ben_moll.jpg",
       links: [
         { label: "Website", url: "https://benjaminmoll.com" }
-      ]
-    },
-    {
-      id: "pedro-aldighieri",
-      ldap: "paldighieri",
-      name: "Pedro Aldighieri",
-      role: "Research Intern",
-      secondaryRole: "PhD Candidate, Northwestern University",
-      location: "London, UK",
-      office: "Google DeepMind London",
-      photo: "static/images/pedro_aldighieri.jpg",
-      links: [
-        { label: "Website", url: "https://p-aldighieri.github.io" }
       ]
     }
   ],
