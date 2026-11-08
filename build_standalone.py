@@ -1,6 +1,7 @@
 import base64
 import io
 import os
+import re
 from PIL import Image
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -42,14 +43,16 @@ def main():
             html = html.replace(rel_path, uri)
             data_js = data_js.replace(rel_path, uri)
 
-    # Inline CSS and JS
-    html = html.replace(
-        '<link rel="stylesheet" href="static/css/styles.css" />',
-        f"<style>\n{css}\n</style>"
+    # Inline CSS and JS (supporting optional cache-buster ?v=... query params)
+    html = re.sub(
+        r'<link\s+rel="stylesheet"\s+href="static/css/styles\.css(?:\?v=[0-9]+)?"\s*/?>',
+        lambda _: f"<style>\n{css}\n</style>",
+        html,
     )
-    html = html.replace(
-        '<script src="static/js/data.js"></script>\n  <script src="static/js/app.js"></script>',
-        f"<script>\n{data_js}\n</script>\n<script>\n{app_js}\n</script>"
+    html = re.sub(
+        r'<script\s+src="static/js/data\.js(?:\?v=[0-9]+)?"></script>\s*<script\s+src="static/js/app\.js(?:\?v=[0-9]+)?"></script>',
+        lambda _: f"<script>\n{data_js}\n</script>\n<script>\n{app_js}\n</script>",
+        html,
     )
 
     os.makedirs(os.path.join(BASE_DIR, "dist"), exist_ok=True)

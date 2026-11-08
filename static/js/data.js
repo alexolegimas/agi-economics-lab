@@ -9,7 +9,7 @@ window.LAB_DATA = {
     institution: "Google DeepMind",
     director: "Alex Imas",
     locations: ["New York, NY", "London, UK"],
-    updated: "October 2026"
+    updated: "November 2026"
   },
 
   coreMembers: [
@@ -24,19 +24,6 @@ window.LAB_DATA = {
       photo: "static/images/alex_imas.jpg",
       links: [
         { label: "Website", url: "https://www.aleximas.com" }
-      ]
-    },
-    {
-      id: "andrew-koh",
-      ldap: "andrewkoh",
-      name: "Andrew Koh",
-      role: "Research Scientist",
-      secondaryRole: "Assistant Professor, Columbia University",
-      location: "New York, NY",
-      office: "Google DeepMind NYC",
-      photo: "static/images/andrew_koh.jpg",
-      links: [
-        { label: "Website", url: "https://www.andrewjkoh.com" }
       ]
     },
     {
@@ -77,6 +64,32 @@ window.LAB_DATA = {
       links: [
         { label: "Website", url: "https://www.sebkrier.com" }
       ]
+    },
+    {
+      id: "ben-moll",
+      ldap: "",
+      name: "Ben Moll",
+      role: "Research Advisor",
+      secondaryRole: "Professor of Economics, London School of Economics",
+      location: "London, UK",
+      office: "Google DeepMind London",
+      photo: "static/images/ben_moll.jpg",
+      links: [
+        { label: "Website", url: "https://benjaminmoll.com" }
+      ]
+    },
+    {
+      id: "pedro-aldighieri",
+      ldap: "paldighieri",
+      name: "Pedro Aldighieri",
+      role: "Research Intern",
+      secondaryRole: "PhD Candidate, Northwestern University",
+      location: "London, UK",
+      office: "Google DeepMind London",
+      photo: "static/images/pedro_aldighieri.jpg",
+      links: [
+        { label: "Website", url: "https://p-aldighieri.github.io" }
+      ]
     }
   ],
 
@@ -85,7 +98,7 @@ window.LAB_DATA = {
       id: "paper-organizing-intelligence",
       title: "Organizing Intelligence",
       authors: ["Alex Imas", "Andrew Koh", "Shane Legg"],
-      authorIds: ["alex-imas", "andrew-koh"],
+      authorIds: ["alex-imas"],
       date: "October 2026",
       pillar: "agi-macro",
       url: "https://arxiv.org/abs/2611.05417",
@@ -147,7 +160,7 @@ window.LAB_DATA = {
       title: "The Economics of Intelligence: How and when does AGI lead to economic transformation?",
       subtitle: "Smarter AI will increase productivity, but real economic transformation hinges on agents learning to coordinate",
       authors: ["Alex Imas", "Andrew Koh", "Shane Legg"],
-      authorIds: ["alex-imas", "andrew-koh"],
+      authorIds: ["alex-imas"],
       outlet: "DeepMind Institute",
       date: "Oct 29, 2026",
       pillar: "agi-macro",
@@ -219,7 +232,7 @@ window.LAB_DATA = {
       title: "Will AI soon lead to double-digit growth?",
       subtitle: "Probably not. Here is why.",
       authors: ["Ben Moll", "Alex Imas"],
-      authorIds: ["alex-imas"],
+      authorIds: ["ben-moll", "alex-imas"],
       outlet: "Substack",
       date: "Sep 9, 2026",
       pillar: "agi-macro",
