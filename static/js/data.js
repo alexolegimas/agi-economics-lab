@@ -95,6 +95,18 @@ window.LAB_DATA = {
 
   papers: [
     {
+      id: "paper-decision-models-surrogates",
+      title: "Decision Models as Scalable Economic Surrogates that Capture Human Variation",
+      authors: ["Maxime Saxena", "Fabio Caccioli", "R. Maria del Rio-Chanona"],
+      authorIds: ["maria-del-rio-chanona"],
+      date: "November 2026",
+      pillar: "agents-markets",
+      url: "https://arxiv.org/abs/2611.05553",
+      pdfUrl: "https://arxiv.org/pdf/2611.05553",
+      manuscriptLabel: "arXiv Manuscript ↗",
+      abstract: "Decision Models (DMs), a new class of AI models, give fast responses and return a probability distribution over a fixed set of options. These properties make them candidate human surrogates in economic simulations and surveys, a role increasingly filled by Large Language Models (LLMs), which are costly at scale and under-represent the variation in human behaviour. We present a first evaluation of DMs as human surrogates in economics, comparing 10 DMs with 8 LLMs in three economic settings: a household spending survey on consumption, several classic economic games and a labour-market field experiment. Frontier DMs, those that score highest on general decision-making benchmarks, reproduce the variation in human responses more closely than LLMs in all three settings. They capture the modal human response as well as LLMs in the spending survey, but less well in the economic games. Frontier DMs are also roughly ten times faster than the fastest LLM and can be over a hundred times cheaper. Together, these results suggest that DMs capture the heterogeneity of human behaviour better than LLMs and make large-scale economic simulations more feasible."
+    },
+    {
       id: "paper-organizing-intelligence",
       title: "Organizing Intelligence",
       authors: ["Alex Imas", "Andrew Koh", "Shane Legg"],
